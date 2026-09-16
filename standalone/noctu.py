@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Noctu - a two-row status line for Claude Code, no dependencies, no network.
+"""Noctu - a two-row status line for Claude Code, no dependencies.
 
 Reads Claude Code's session JSON on stdin and prints two rows: a model chip
 with the context meter, effort and session time, then a branch chip with the
@@ -14,6 +14,8 @@ plus a bright value, and only the model and the branch get filled badges,
 because only those two are identity. The columns are aligned by measuring
 each row rather than padding to a guess, so they hold with any branch name.
 """
+# This variant makes no network calls and reads no credentials. For the weekly
+# Fable window too, use noctu-fable.py.
 import json
 import os
 import subprocess
@@ -199,6 +201,7 @@ def main():
                     for i, cell in enumerate(cells))
            for cells in rows]
     sys.stdout.buffer.write('\n'.join(out).encode('utf-8'))
+
 
 if __name__ == '__main__':
     main()
