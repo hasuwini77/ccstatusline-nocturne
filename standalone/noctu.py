@@ -19,6 +19,8 @@ import sys
 # palette (hex -> truecolor SGR)
 VIOLET, VIOLET_DK = '7C5CFF', '5B3FD1'
 TEAL, TEAL_DK = '2E9E7A', '1E6B52'
+# outside a repository: the divider grey, sunk toward the background
+SLATE, SLATE_DK, SLATE_INK, SLATE_GLYPH = '3C414B', '262A32', '979CA8', '727681'
 YELLOW, YELLOW_BAR = 'F0C755', '6B5A28'
 GREEN, BLUE, DIM, INK, WHITE = '7CE38B', '5B9BE8', '79808E', '0B0E14', 'FFFFFF'
 BAR_FULL, BAR_EMPTY, ARROW, DIVIDER, BRANCH_ICON, DIAMOND = '▓', '░', '', '▏', '', '◆'
@@ -36,10 +38,10 @@ def bg(h):
 RESET = '\x1b[0m'
 
 
-def chip(icon, label, body, icon_bg):
+def chip(icon, label, body, icon_bg, ink=INK, glyph=WHITE, bold=True):
     """icon compartment + label + arrow cap — the badge that anchors each row"""
-    return (bg(icon_bg) + fg(WHITE) + ' ' + icon + ' ' + RESET +
-            bg(body) + fg(INK) + '\x1b[1m ' + label + ' ' + RESET +
+    return (bg(icon_bg) + fg(glyph) + ' ' + icon + ' ' + RESET +
+            bg(body) + fg(ink) + ('\x1b[1m ' if bold else ' ') + label + ' ' + RESET +
             fg(body) + ARROW + RESET)
 
 
@@ -121,7 +123,8 @@ def main():
 
     left = [chip(DIAMOND, model, VIOLET, VIOLET_DK)]
     branch = git_branch(cwd)
-    right = [chip(BRANCH_ICON, branch, TEAL, TEAL_DK)] if branch else ['']
+    right = [chip(BRANCH_ICON, branch, TEAL, TEAL_DK) if branch else
+             chip(BRANCH_ICON, 'no git', SLATE, SLATE_DK, SLATE_INK, SLATE_GLYPH, bold=False)]
 
     row1 = [meter(pct, YELLOW_BAR, YELLOW, 'ctx ') if pct is not None
             else fg(DIM) + 'ctx  —' + RESET]
