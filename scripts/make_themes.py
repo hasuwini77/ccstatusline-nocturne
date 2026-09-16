@@ -81,7 +81,7 @@ def colours(pal):
     return {
       'chip1_body': model, 'chip1_icon': mix(model, bg, .45), 'chip1_glyph': pal['glyph'], 'chip1_ink': bg,
       'chip2_body': branch,'chip2_icon': mix(branch, bg, .45),'chip2_glyph': pal['glyph'], 'chip2_ink': bg,
-      'nogit_body': nogit, 'nogit_icon': mix(nogit, bg, .45), 'nogit_glyph': mix(fg, bg, .45), 'nogit_ink': mix(fg, bg, .25),
+      'nogit_body': nogit, 'nogit_icon': mix(nogit, bg, .45), 'nogit_glyph': mix(fg, bg, .20 if light else .45), 'nogit_ink': fg if light else mix(fg, bg, .25),
       'chip3_body': limit, 'chip3_icon': mix(limit, bg, .45), 'chip3_glyph': pal['glyph'], 'chip3_ink': bg,
       'ctx_bar':  mix(pal['ctx'], bg, bar_t),  'ctx_val':  pal['ctx'],
       'ses_bar':  mix(pal['ses'], bg, bar_t),  'ses_val':  pal['ses'],

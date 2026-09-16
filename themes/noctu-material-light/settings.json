@@ -174,7 +174,7 @@
         "customText": "  ",
         "merge": "no-padding",
         "backgroundColor": "hex:D1D9DD",
-        "color": "hex:9FADB4",
+        "color": "hex:758A94",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -195,7 +195,7 @@
         "commandPath": "git rev-parse || echo no git",
         "timeout": 500,
         "merge": "no-padding",
-        "color": "hex:7E919A",
+        "color": "hex:546E7A",
         "backgroundColor": "hex:B0BEC5"
       },
       {
