@@ -32,6 +32,15 @@ The original. Two badges, muted bars, thin dividers.
 cp themes/nocturne/settings.json ~/.config/ccstatusline/settings.json
 ```
 
+### Nocturne Panel
+Three lines, one column. Each meter gets its own badge — **context**, **session**, **limit** — and because the labels are fixed width, every bar starts at the same column no matter how long your branch name is. The weekly limit gets its own row, since on Claude Code that's the number that actually stops you.
+
+![Nocturne Panel](themes/nocturne-panel/preview.png)
+
+```bash
+cp themes/nocturne-panel/settings.json ~/.config/ccstatusline/settings.json
+```
+
 ### Nocturne Flat
 **No Nerd Font required** — not a single private-use glyph. Same colours and layout, plain `|` dividers, no badges. Use this over SSH, in a bare terminal, or anywhere the fancy glyphs come out as boxes.
 
