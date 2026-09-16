@@ -4,17 +4,19 @@ Two channels. Neither can be done from a terminal: both require a signed-in huma
 
 ---
 
-## 1. statuslin.es — ready now, blocked on one unknown
+## 1. statuslin.es — resubmit as v2
 
-Submitting requires **signing in with GitHub** at https://statuslin.es/submit — the form isn't visible until you do.
+Entries are **standalone scripts** run with `python3 script < session.json` in a sandbox, across eight example sessions. Submit `standalone/noctu.py`, interpreter **python**, network access **off**.
 
-One thing to check when you get there: the guide says the gallery *"runs the submitted script in a sandbox against the same JSON scenarios on this page"*, and the cards carry language tags like `Python`. That suggests entries are **standalone scripts**, not ccstatusline configs. If the form only accepts a script, tell me and I'll port the Noctu layout to a single self-contained file.
+v1 (slug `noctu-70fc3a9b`, 2026-09-16) rendered as mojibake: the source was pasted through a non-UTF-8 clipboard. It also ignored `context_window` and `rate_limits`. v2 fixes all of it (#3). Before pasting, run `python3 standalone/scenarios.py` and expect `ok: 8 statuslin.es scenarios`. Copy the file from GitHub's raw view, not a terminal.
 
-Honest limit if we do port it: a sandboxed script only receives Claude Code's status JSON — model, cwd, transcript path, cost, duration. The **session and weekly usage meters can't come from that**; they need the usage endpoint that ccstatusline caches. A script version would carry context, git, cost and throughput, and drop the two usage bars.
+There's no edit button on the site, so ask hello@statuslin.es to withdraw v1.
 
-**Card text (one per theme, submit the default first):**
+**Title:** Noctu
 
-> **Noctu** — A two-row status line built on one rule: the bar recedes, the number speaks. Every meter splits into a muted bar and a bright value, so the shapes read as texture and the numbers carry the signal. Model and context on one row, branch and the weekly limit on the other; only those two get filled badges, because only those two are identity. The columns stay aligned at any width and with any branch name, which a config alone cannot do — a small post-render pass measures each row and pads it. Seven palettes, two layouts.
+**Description:**
+
+> Two aligned rows with muted bars and bright values: model, context, effort and session time, then git branch (or a muted no-git chip), weekly limit with reset countdown, cost and lines changed. Themed ccstatusline version at github.com/hasuwini77/ccstatusline-nocturne
 
 ---
 
