@@ -121,7 +121,7 @@ Pass `light=True` for light backgrounds and the blends adjust.
 
 ## Details worth knowing
 
-- **Git-aware.** Outside a repository the branch chip, its wedge, its divider and the padding all disappear together — no orphan marks, no gaps.
+- **Git-aware.** Outside a repository the branch chip steps aside for a muted `no git` chip in the same slot — the divider grey sunk toward the background, not bold, so it holds the row's shape without posing as identity. It's a `custom-command` widget running `git rev-parse || echo no git`: silent inside a repo, one line outside, and the same syntax in `sh` and Windows `cmd`. It checks the directory Claude Code launched the status line in. `bash scripts/test-no-git.sh` renders every theme on both sides of the line.
 - **Fixed width.** No flex stretching, so nothing moves when you split a pane.
 - **The model window tracks Fable.** On this account `weeklyOpusUsage` and `weeklySonnetUsage` report zero while `fableUsage` reports real numbers — check `~/.cache/ccstatusline/usage.json` and swap the widget type if that changes for you.
 - **Bars are two widgets.** A `slider-only` meter in the muted tint, then the same widget again with `rawValue` for the bright number. That split is the whole look.

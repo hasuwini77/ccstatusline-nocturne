@@ -30,6 +30,11 @@ COMMON = {
   'chip2_icon':  [('l2-icon','backgroundColor')],
   'chip2_glyph': [('l2-icon','color')],
   'chip2_ink':   [('l2-branch','color')],
+  # the muted stand-in that takes the branch chip's slot outside a repository
+  'nogit_body':  [('l2-ng-padl','backgroundColor'),('l2-nogit','backgroundColor'),('l2-ng-cap','color')],
+  'nogit_icon':  [('l2-ng-icon','backgroundColor')],
+  'nogit_glyph': [('l2-ng-icon','color')],
+  'nogit_ink':   [('l2-nogit','color')],
   'ctx_bar':  [('l1-bar','color')],
   'ctx_val':  [('l1-pct','color'),('l1-lab','color')],
   'effort':   [('l1-effort','color')],
@@ -70,9 +75,13 @@ def colours(pal):
     light = pal.get('light')
     bar_t, timer_t = (.32, .18) if light else (.62, .25)
     model, branch, limit = pal['model'], pal['branch'], pal['limit']
+    # no hue of its own: the divider grey sunk toward the background, so it
+    # holds the slot without reading as a second identity chip
+    nogit = mix(pal['sep'], bg, .30 if light else .55)
     return {
       'chip1_body': model, 'chip1_icon': mix(model, bg, .45), 'chip1_glyph': pal['glyph'], 'chip1_ink': bg,
       'chip2_body': branch,'chip2_icon': mix(branch, bg, .45),'chip2_glyph': pal['glyph'], 'chip2_ink': bg,
+      'nogit_body': nogit, 'nogit_icon': mix(nogit, bg, .45), 'nogit_glyph': mix(fg, bg, .20 if light else .45), 'nogit_ink': fg if light else mix(fg, bg, .25),
       'chip3_body': limit, 'chip3_icon': mix(limit, bg, .45), 'chip3_glyph': pal['glyph'], 'chip3_ink': bg,
       'ctx_bar':  mix(pal['ctx'], bg, bar_t),  'ctx_val':  pal['ctx'],
       'ses_bar':  mix(pal['ses'], bg, bar_t),  'ses_val':  pal['ses'],

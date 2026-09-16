@@ -169,6 +169,54 @@
         }
       },
       {
+        "id": "l2-ng-icon",
+        "type": "custom-text",
+        "customText": "  ",
+        "merge": "no-padding",
+        "backgroundColor": "hex:262A32",
+        "color": "hex:727681",
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "l2-ng-padl",
+        "type": "custom-text",
+        "customText": " ",
+        "merge": "no-padding",
+        "backgroundColor": "hex:3C414B",
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "l2-nogit",
+        "type": "custom-command",
+        "commandPath": "git rev-parse || echo no git",
+        "timeout": 500,
+        "merge": "no-padding",
+        "color": "hex:979CA8",
+        "backgroundColor": "hex:3C414B"
+      },
+      {
+        "id": "l2-ng-cap",
+        "type": "custom-text",
+        "customText": "█",
+        "merge": "no-padding",
+        "color": "hex:3C414B",
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "l2-ng-trail",
+        "type": "custom-text",
+        "customText": " ",
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
         "id": "mark1",
         "type": "custom-text",
         "customText": "​",
