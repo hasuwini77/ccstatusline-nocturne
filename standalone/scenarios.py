@@ -7,6 +7,10 @@ directory (none for the non-git one), COLUMNS/LINES only, no locale.
 
     python3 standalone/scenarios.py          # check all eight, print renders
     python3 standalone/scenarios.py --quiet  # checks only
+
+Both files are checked. noctu-fable.py runs with the usage endpoint stubbed
+the way the sandbox mocks it: a preview token in CLAUDE_CODE_OAUTH_TOKEN and a
+fixed seven_day_fable utilisation (15%, or 80% for the 1M-context session).
 """
 import json
 import os
@@ -18,6 +22,30 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPT = os.path.join(HERE, 'noctu.py')
+FABLE_SCRIPT = os.path.join(HERE, 'noctu-fable.py')
+PREVIEW_TOKEN = 'statuslines-preview-oauth-token'
+# Runs a script with urlopen stubbed: only the usage URL with the preview token
+# answers, like the sandbox's mock server. sys.platform is pinned so a Mac test
+# run never reaches for the real Keychain token.
+STUB = r"""
+import io, json, runpy, sys, urllib.request
+script, fable, token, shape = sys.argv[1], float(sys.argv[2]), sys.argv[3], sys.argv[4]
+sys.argv = [script]
+sys.platform = 'linux'
+def urlopen(req, timeout=None):
+    assert req.full_url == 'https://api.anthropic.com/api/oauth/usage', req.full_url
+    if req.get_header('Authorization') != 'Bearer ' + token:
+        raise OSError('401 unauthorized')
+    if shape == 'limits':  # what the live endpoint returns
+        body = {'limits': [{'kind': 'weekly_all', 'percent': 57, 'scope': None},
+                           {'kind': 'weekly_scoped', 'percent': fable,
+                            'scope': {'model': {'id': None, 'display_name': 'Fable'}}}]}
+    else:  # the older top-level field, which the sandbox mock also sends
+        body = {'seven_day_fable': {'utilization': fable}}
+    return io.BytesIO(json.dumps(body).encode())
+urllib.request.urlopen = urlopen
+runpy.run_path(script, run_name='__main__')
+"""
 ANSI = re.compile(r'\x1b\[[0-9;]*m')
 
 OPUS = {'id': 'claude-opus-4-8', 'display_name': 'Opus 4.8'}
@@ -68,9 +96,10 @@ SCENARIOS = [
     ('non-git', dict(model=OPUS, effort={'level': 'high'}, cost=COST, context_window=usage(22)),
      None, ['no git', '22%'], []),
 ]
+FABLE_PERCENT = {'big-context': 80}
 
 
-def run(stdin, branch):
+def run(stdin, branch, script=SCRIPT, fable=None, token=PREVIEW_TOKEN, shape='limits'):
     with tempfile.TemporaryDirectory() as d:
         if branch:
             for cmd in (['init', '-q'], ['checkout', '-q', '-b', branch],
@@ -81,19 +110,36 @@ def run(stdin, branch):
                        version='2.1.155', output_style={'name': 'default'})
         payload.update(stdin)
         payload['workspace'] = {'current_dir': d, 'project_dir': d}
-        env = {'PATH': os.environ.get('PATH', ''), 'COLUMNS': '120', 'LINES': '40'}
-        return subprocess.run([sys.executable, SCRIPT], input=json.dumps(payload).encode(),
+        env = {'PATH': os.environ.get('PATH', ''), 'COLUMNS': '120', 'LINES': '40', 'HOME': d}
+        argv = [sys.executable, script]
+        if fable is not None:
+            env['CLAUDE_CODE_OAUTH_TOKEN'] = PREVIEW_TOKEN
+            argv = [sys.executable, '-c', STUB, script, str(fable), token, shape]
+        return subprocess.run(argv, input=json.dumps(payload).encode(),
                               cwd=d, env=env, capture_output=True, timeout=5)
 
 
 def main():
     quiet = '--quiet' in sys.argv
     failures = []
-    source = open(SCRIPT, 'rb').read()
-    if not source.isascii():
-        failures.append('source: not ASCII-only (pastes through a non-UTF-8 clipboard garble it)')
+    for path in (SCRIPT, FABLE_SCRIPT):
+        if not open(path, 'rb').read().isascii():
+            failures.append('%s: not ASCII-only (pastes through a non-UTF-8 clipboard garble it)'
+                            % os.path.basename(path))
+    runs = []
     for key, stdin, branch, want, avoid in SCENARIOS:
-        res = run(stdin, branch)
+        runs.append((key, run(stdin, branch), want, avoid + ['fable']))
+        pct = FABLE_PERCENT.get(key, 15)
+        runs.append(('fable/' + key, run(stdin, branch, FABLE_SCRIPT, pct),
+                     want + ['fable %d%%' % pct], avoid))
+    key, stdin, branch, want, avoid = SCENARIOS[2]
+    runs.append(('fable/legacy-shape', run(stdin, branch, FABLE_SCRIPT, 42, shape='legacy'),
+                 want + ['fable 42%'], avoid))
+    # a wrong token must degrade to a dash, not crash or hang
+    key, stdin, branch, want, avoid = SCENARIOS[0]
+    runs.append(('fable/bad-token', run(stdin, branch, FABLE_SCRIPT, 15, token='wrong'),
+                 want + ['fable \u2014'], avoid))
+    for key, res, want, avoid in runs:
         out = res.stdout.decode('utf-8', errors='replace')
         plain = ANSI.sub('', out)
         if not quiet:
@@ -115,7 +161,7 @@ def main():
     for f in failures:
         print('FAIL', f)
     if not failures:
-        print('ok: %d statuslin.es scenarios' % len(SCENARIOS))
+        print('ok: %d statuslin.es scenarios, plain and fable (%d renders)' % (len(SCENARIOS), len(runs)))
     return 1 if failures else 0
 
 
