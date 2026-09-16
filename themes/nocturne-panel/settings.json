@@ -56,7 +56,7 @@
         "type": "custom-text",
         "customText": "ctx  ",
         "merge": "no-padding",
-        "color": "hex:8A93A6"
+        "color": "hex:F0C755"
       },
       {
         "id": "l1-bar",
@@ -80,6 +80,12 @@
         "color": "hex:F0C755"
       },
       {
+        "id": "mark2-0",
+        "type": "custom-text",
+        "customText": "⁠",
+        "merge": "no-padding"
+      },
+      {
         "id": "s2",
         "type": "separator",
         "character": " ▏ ",
@@ -90,6 +96,12 @@
         "type": "thinking-effort",
         "rawValue": true,
         "color": "hex:3E8E5A"
+      },
+      {
+        "id": "mark3-0",
+        "type": "custom-text",
+        "customText": "⁡",
+        "merge": "no-padding"
       },
       {
         "id": "s3",
@@ -172,7 +184,7 @@
         "type": "custom-text",
         "customText": "ses  ",
         "merge": "no-padding",
-        "color": "hex:8A93A6"
+        "color": "hex:E8903C"
       },
       {
         "id": "l2-bar",
@@ -196,6 +208,12 @@
         "color": "hex:E8903C"
       },
       {
+        "id": "mark2-1",
+        "type": "custom-text",
+        "customText": "⁠",
+        "merge": "no-padding"
+      },
+      {
         "id": "s5",
         "type": "separator",
         "character": " ▏ ",
@@ -209,6 +227,12 @@
           "compact": "true"
         },
         "color": "hex:C97B3C"
+      },
+      {
+        "id": "mark3-1",
+        "type": "custom-text",
+        "customText": "⁡",
+        "merge": "no-padding"
       },
       {
         "id": "s6",
@@ -238,22 +262,22 @@
         "type": "custom-text",
         "customText": " ▲ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:5B3FD1",
-        "color": "hex:FFFFFF"
+        "backgroundColor": "hex:8C3B63",
+        "color": "hex:FBD3E4"
       },
       {
         "id": "l3-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:B69CFF"
+        "backgroundColor": "hex:F49AC2"
       },
       {
         "id": "l3-label",
         "type": "custom-text",
         "customText": "limit",
         "merge": "no-padding",
-        "backgroundColor": "hex:B69CFF",
+        "backgroundColor": "hex:F49AC2",
         "color": "hex:0B0E14",
         "bold": true
       },
@@ -262,14 +286,14 @@
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:B69CFF"
+        "backgroundColor": "hex:F49AC2"
       },
       {
         "id": "l3-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:B69CFF"
+        "color": "hex:F49AC2"
       },
       {
         "id": "mark2",
@@ -288,7 +312,7 @@
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:8A93A6"
+        "color": "hex:F49AC2"
       },
       {
         "id": "l3-bar",
@@ -297,7 +321,7 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:6B4BA8"
+        "color": "hex:7A3A57"
       },
       {
         "id": "s7b",
@@ -309,7 +333,13 @@
         "id": "l3-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:B69CFF"
+        "color": "hex:F49AC2"
+      },
+      {
+        "id": "mark2-2",
+        "type": "custom-text",
+        "customText": "⁠",
+        "merge": "no-padding"
       },
       {
         "id": "s8",
@@ -324,7 +354,13 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:8B79C9"
+        "color": "hex:D874A2"
+      },
+      {
+        "id": "mark3-2",
+        "type": "custom-text",
+        "customText": "⁡",
+        "merge": "no-padding"
       },
       {
         "id": "s9",
@@ -343,7 +379,7 @@
         "id": "l3-opus",
         "type": "weekly-opus-usage",
         "rawValue": true,
-        "color": "hex:B69CFF"
+        "color": "hex:F49AC2"
       },
       {
         "id": "s10",
