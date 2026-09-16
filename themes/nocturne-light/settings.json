@@ -1,0 +1,333 @@
+{
+  "version": 4,
+  "lines": [
+    [
+      {
+        "id": "l1-icon",
+        "type": "custom-text",
+        "customText": " ◆ ",
+        "merge": "no-padding",
+        "backgroundColor": "hex:432CA8",
+        "color": "hex:FFFFFF"
+      },
+      {
+        "id": "l1-padl",
+        "type": "custom-text",
+        "customText": " ",
+        "merge": "no-padding",
+        "backgroundColor": "hex:5B3FD1"
+      },
+      {
+        "id": "l1-model",
+        "type": "model",
+        "rawValue": true,
+        "bold": true,
+        "color": "hex:FFFFFF",
+        "backgroundColor": "hex:5B3FD1"
+      },
+      {
+        "id": "l1-padr",
+        "type": "custom-text",
+        "customText": " ",
+        "merge": "no-padding",
+        "backgroundColor": "hex:5B3FD1"
+      },
+      {
+        "id": "l1-cap",
+        "type": "custom-text",
+        "customText": "",
+        "merge": "no-padding",
+        "color": "hex:5B3FD1"
+      },
+      {
+        "id": "sp-cap",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l1-effort",
+        "type": "thinking-effort",
+        "rawValue": true,
+        "color": "hex:1F7A35"
+      },
+      {
+        "id": "s2",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l1-ctxlab",
+        "type": "custom-text",
+        "customText": "ctx ",
+        "merge": "no-padding",
+        "color": "hex:8A6A08"
+      },
+      {
+        "id": "l1-ctxbar",
+        "type": "context-bar",
+        "rawValue": true,
+        "metadata": {
+          "display": "slider-only"
+        },
+        "color": "hex:E3D4A0"
+      },
+      {
+        "id": "sp-ctx",
+        "type": "separator",
+        "character": " ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l1-ctxpct",
+        "type": "context-percentage",
+        "rawValue": true,
+        "color": "hex:8A6A08"
+      },
+      {
+        "id": "s3",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l1-speed",
+        "type": "output-speed",
+        "rawValue": true,
+        "color": "hex:1B5FA8"
+      },
+      {
+        "id": "s4",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l1-status",
+        "type": "claude-status",
+        "rawValue": true,
+        "color": "hex:1F7A35"
+      },
+      {
+        "id": "s5",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l1-cost",
+        "type": "session-cost",
+        "rawValue": true,
+        "color": "hex:1F7A35"
+      }
+    ],
+    [
+      {
+        "id": "l2-icon",
+        "type": "custom-text",
+        "customText": "  ",
+        "merge": "no-padding",
+        "backgroundColor": "hex:0F5740",
+        "color": "hex:FFFFFF",
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "l2-padl",
+        "type": "custom-text",
+        "customText": " ",
+        "merge": "no-padding",
+        "backgroundColor": "hex:1B7A5C",
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "l2-branch",
+        "type": "git-branch",
+        "rawValue": true,
+        "metadata": {
+          "hide": "no-git"
+        },
+        "color": "hex:FFFFFF",
+        "backgroundColor": "hex:1B7A5C",
+        "bold": true
+      },
+      {
+        "id": "l2-cap",
+        "type": "custom-text",
+        "customText": "█",
+        "merge": "no-padding",
+        "color": "hex:1B7A5C",
+        "metadata": {
+          "hide": "merge-target-hidden"
+        }
+      },
+      {
+        "id": "l2-anchor",
+        "type": "git-conflicts",
+        "metadata": {
+          "zeroDisplay": "clean",
+          "symbolClean": " ",
+          "hide": "no-git"
+        }
+      },
+      {
+        "id": "l2-capsep",
+        "type": "separator",
+        "character": "▏ ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l2-ab",
+        "type": "git-ahead-behind",
+        "rawValue": true,
+        "metadata": {
+          "hide": "no-git,no-upstream,zero"
+        },
+        "color": "hex:6B7382"
+      },
+      {
+        "id": "l2-changes",
+        "type": "git-changes",
+        "rawValue": true,
+        "metadata": {
+          "hide": "no-git,zero"
+        },
+        "color": "hex:E6B34A"
+      },
+      {
+        "id": "s6",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l2-slab",
+        "type": "custom-text",
+        "customText": "session ",
+        "merge": "no-padding",
+        "color": "hex:9C4E10"
+      },
+      {
+        "id": "l2-session",
+        "type": "session-usage",
+        "rawValue": true,
+        "metadata": {
+          "display": "slider-only"
+        },
+        "color": "hex:F0CBA8"
+      },
+      {
+        "id": "sp-ses",
+        "type": "separator",
+        "character": " ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l2-sespct",
+        "type": "session-usage",
+        "rawValue": true,
+        "color": "hex:9C4E10"
+      },
+      {
+        "id": "dot-l2-reset",
+        "type": "separator",
+        "character": " ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l2-reset",
+        "type": "reset-timer",
+        "rawValue": true,
+        "metadata": {
+          "compact": "true"
+        },
+        "color": "hex:9C4E10"
+      },
+      {
+        "id": "s7",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l2-wlab",
+        "type": "custom-text",
+        "customText": "week ",
+        "merge": "no-padding",
+        "color": "hex:5B3FD1"
+      },
+      {
+        "id": "l2-weekly",
+        "type": "weekly-usage",
+        "rawValue": true,
+        "metadata": {
+          "display": "slider-only"
+        },
+        "color": "hex:CFC2F5"
+      },
+      {
+        "id": "sp-wk",
+        "type": "separator",
+        "character": " ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l2-wkpct",
+        "type": "weekly-usage",
+        "rawValue": true,
+        "color": "hex:5B3FD1"
+      },
+      {
+        "id": "dot-l2-wreset",
+        "type": "separator",
+        "character": " ",
+        "color": "hex:9AA1AE"
+      },
+      {
+        "id": "l2-wreset",
+        "type": "weekly-reset-timer",
+        "rawValue": true,
+        "metadata": {
+          "compact": "true"
+        },
+        "color": "hex:5B3FD1"
+      }
+    ],
+    []
+  ],
+  "flexMode": "full-until-compact",
+  "compactThreshold": 60,
+  "colorLevel": 3,
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "numberFormat": {
+    "percent": {
+      "style": "whole"
+    },
+    "token": {
+      "style": "compact"
+    },
+    "speed": {
+      "style": "whole"
+    }
+  },
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [],
+    "theme": "custom",
+    "autoAlign": false,
+    "continueThemeAcrossLines": false
+  }
+}

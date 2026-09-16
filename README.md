@@ -18,6 +18,47 @@ Most status lines shout. This one is built on one rule: **the bar recedes, the n
 - **Same at every width.** No flex stretching, so nothing jumps when you split a pane. Needs ~60 columns; degrades by truncation below that.
 - **Quiet when there's nothing to say.** The branch badge, its wedge and divider all disappear outside a git repository, and counters hide at zero.
 
+
+## The four themes
+
+Every theme is the same layout and the same rules — only the surface changes. Pick one, copy its `settings.json`.
+
+### Nocturne
+The original. Two badges, muted bars, thin dividers.
+
+![Nocturne](themes/nocturne/preview.png)
+
+```bash
+cp themes/nocturne/settings.json ~/.config/ccstatusline/settings.json
+```
+
+### Nocturne Flat
+**No Nerd Font required** — not a single private-use glyph. Same colours and layout, plain `|` dividers, no badges. Use this over SSH, in a bare terminal, or anywhere the fancy glyphs come out as boxes.
+
+![Nocturne Flat](themes/nocturne-flat/preview.png)
+
+```bash
+cp themes/nocturne-flat/settings.json ~/.config/ccstatusline/settings.json
+```
+
+### Nocturne Powerline
+The loud one. Every field is a filled block with arrow separators, for people who want the classic powerline look.
+
+![Nocturne Powerline](themes/nocturne-powerline/preview.png)
+
+```bash
+cp themes/nocturne-powerline/settings.json ~/.config/ccstatusline/settings.json
+```
+
+### Nocturne Light
+For light terminals. The palette is re-derived rather than inverted — bars go pale, values go deep, so contrast holds on a white background.
+
+![Nocturne Light](themes/nocturne-light/preview.png)
+
+```bash
+cp themes/nocturne-light/settings.json ~/.config/ccstatusline/settings.json
+```
+
 ## Install
 
 Requires **ccstatusline ≥ 2.2.29**, a **Nerd Font**, and a truecolor terminal (WezTerm, Ghostty, iTerm2, Windows Terminal).
@@ -25,7 +66,7 @@ Requires **ccstatusline ≥ 2.2.29**, a **Nerd Font**, and a truecolor terminal 
 ```bash
 npm i -g ccstatusline@2.2.29
 mkdir -p ~/.config/ccstatusline
-cp settings.json ~/.config/ccstatusline/settings.json
+cp themes/nocturne/settings.json ~/.config/ccstatusline/settings.json
 ```
 
 Then point Claude Code at ccstatusline. Copy `statusline.sh` to `~/.claude/statusline.sh` and add this to `~/.claude/settings.json`:
