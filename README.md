@@ -33,13 +33,18 @@ cp themes/nocturne/settings.json ~/.config/ccstatusline/settings.json
 ```
 
 ### Nocturne Panel
-Three lines, one column. Each meter gets its own badge — **context**, **session**, **limit** — and because the labels are fixed width, every bar starts at the same column no matter how long your branch name is. The weekly limit gets its own row, since on Claude Code that's the number that actually stops you.
+Three rows, one grid. The model, the branch and the weekly limit each lead their own row as a badge; the meters line up in a column behind them. The weekly limit gets its own row because on Claude Code that's the number that actually stops you, and the Opus window sits beside it.
 
 ![Nocturne Panel](themes/nocturne-panel/preview.png)
 
 ```bash
 cp themes/nocturne-panel/settings.json ~/.config/ccstatusline/settings.json
+cp scripts/align-bars.py ~/.claude/scripts/align-bars.py
 ```
+
+**This theme needs the aligner.** ccstatusline cannot align these bars: each row's meter sits behind a variable-width field — your model name, your branch name — so the column moves with them, and `autoAlign` only works in Powerline mode. `scripts/align-bars.py` fixes it after the fact: it finds the first bar glyph on every row, measures its column ignoring ANSI escapes, and pads the short rows at a zero-width marker so the dividers, labels and bars all land together. The included `statusline.sh` pipes through it when present and skips it when absent, so the other themes are unaffected. Costs about 25 ms per render.
+
+Needs ~100 columns; the two-line themes go down to 56.
 
 ### Nocturne Flat
 **No Nerd Font required** — not a single private-use glyph. Same colours and layout, plain `|` dividers, no badges. Use this over SSH, in a bare terminal, or anywhere the fancy glyphs come out as boxes.

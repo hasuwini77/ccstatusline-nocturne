@@ -29,7 +29,14 @@ for _c in "$HOME"/.nvm/versions/node/*/lib/node_modules/ccstatusline/dist/ccstat
   [ -f "$_c" ] && CCS_JS="$_c"
 done
 
+ALIGN="$HOME/.claude/scripts/align-bars.py"
+
 if [ -n "$CCS_JS" ]; then
+  # Align meter bars into one column (see align-bars.py). Skipped if absent.
+  if [ -f "$ALIGN" ]; then
+    "$NODE_BIN" "$CCS_JS" | python3 "$ALIGN"
+    exit $?
+  fi
   exec "$NODE_BIN" "$CCS_JS"
 else
   # Fallback only — slow. Means the global install is missing:
