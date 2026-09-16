@@ -142,12 +142,12 @@
         "id": "l2-branch",
         "type": "git-branch",
         "rawValue": true,
+        "bold": true,
         "color": "hex:0B0E14",
         "backgroundColor": "hex:2E9E7A",
         "metadata": {
           "hide": "no-git"
-        },
-        "bold": true
+        }
       },
       {
         "id": "l2-cap",
@@ -183,18 +183,18 @@
       {
         "id": "l2-lab",
         "type": "custom-text",
-        "customText": "ses  ",
+        "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:E8903C"
+        "color": "hex:F49AC2"
       },
       {
         "id": "l2-bar",
-        "type": "session-usage",
+        "type": "weekly-usage",
         "rawValue": true,
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:7A4A1E"
+        "color": "hex:7A3A57"
       },
       {
         "id": "s4b",
@@ -204,9 +204,9 @@
       },
       {
         "id": "l2-pct",
-        "type": "session-usage",
+        "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:E8903C"
+        "color": "hex:F49AC2"
       },
       {
         "id": "mark2-1",
@@ -222,12 +222,12 @@
       },
       {
         "id": "l2-reset",
-        "type": "reset-timer",
+        "type": "weekly-reset-timer",
         "rawValue": true,
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:C97B3C"
+        "color": "hex:D874A2"
       },
       {
         "id": "mark3-1",
@@ -242,65 +242,17 @@
         "color": "hex:79808E"
       },
       {
-        "id": "l2-changes",
-        "type": "git-changes",
+        "id": "l2-opuslab",
+        "type": "custom-text",
+        "customText": "fable ",
+        "merge": "no-padding",
+        "color": "hex:9A8FCB"
+      },
+      {
+        "id": "l2-opus",
+        "type": "fable-weekly-usage",
         "rawValue": true,
-        "metadata": {
-          "hide": "no-git,zero"
-        },
-        "color": "hex:E6B34A"
-      },
-      {
-        "id": "l2-cost",
-        "type": "session-cost",
-        "rawValue": true,
-        "color": "hex:7CE38B"
-      }
-    ],
-    [
-      {
-        "id": "l3-icon",
-        "type": "custom-text",
-        "customText": " ▲ ",
-        "merge": "no-padding",
-        "backgroundColor": "hex:8C3B63",
-        "color": "hex:FBD3E4"
-      },
-      {
-        "id": "l3-padl",
-        "type": "custom-text",
-        "customText": " ",
-        "merge": "no-padding",
-        "backgroundColor": "hex:F49AC2"
-      },
-      {
-        "id": "l3-label",
-        "type": "custom-text",
-        "customText": "limit",
-        "merge": "no-padding",
-        "backgroundColor": "hex:F49AC2",
-        "color": "hex:0B0E14",
-        "bold": true
-      },
-      {
-        "id": "l3-padr",
-        "type": "custom-text",
-        "customText": " ",
-        "merge": "no-padding",
-        "backgroundColor": "hex:F49AC2"
-      },
-      {
-        "id": "l3-cap",
-        "type": "custom-text",
-        "customText": "",
-        "merge": "no-padding",
-        "color": "hex:F49AC2"
-      },
-      {
-        "id": "mark2",
-        "type": "custom-text",
-        "customText": "​",
-        "merge": "no-padding"
+        "color": "hex:D6C9FF"
       },
       {
         "id": "s7",
@@ -309,38 +261,10 @@
         "color": "hex:79808E"
       },
       {
-        "id": "l3-lab",
-        "type": "custom-text",
-        "customText": "week ",
-        "merge": "no-padding",
-        "color": "hex:F49AC2"
-      },
-      {
-        "id": "l3-bar",
-        "type": "weekly-usage",
+        "id": "l2-cost",
+        "type": "session-cost",
         "rawValue": true,
-        "metadata": {
-          "display": "slider-only"
-        },
-        "color": "hex:7A3A57"
-      },
-      {
-        "id": "s7b",
-        "type": "separator",
-        "character": " ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l3-pct",
-        "type": "weekly-usage",
-        "rawValue": true,
-        "color": "hex:F49AC2"
-      },
-      {
-        "id": "mark2-2",
-        "type": "custom-text",
-        "customText": "⁠",
-        "merge": "no-padding"
+        "color": "hex:7CE38B"
       },
       {
         "id": "s8",
@@ -349,52 +273,13 @@
         "color": "hex:79808E"
       },
       {
-        "id": "l3-reset",
-        "type": "weekly-reset-timer",
-        "rawValue": true,
-        "metadata": {
-          "compact": "true"
-        },
-        "color": "hex:D874A2"
-      },
-      {
-        "id": "mark3-2",
-        "type": "custom-text",
-        "customText": "⁡",
-        "merge": "no-padding"
-      },
-      {
-        "id": "s9",
-        "type": "separator",
-        "character": " ▏ ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l3-opuslab",
-        "type": "custom-text",
-        "customText": "opus ",
-        "merge": "no-padding",
-        "color": "hex:9A8FCB"
-      },
-      {
-        "id": "l3-opus",
-        "type": "weekly-opus-usage",
-        "rawValue": true,
-        "color": "hex:D6C9FF"
-      },
-      {
-        "id": "s10",
-        "type": "separator",
-        "character": " ▏ ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l3-status",
+        "id": "l2-status",
         "type": "claude-status",
         "rawValue": true,
         "color": "hex:3E8E5A"
       }
-    ]
+    ],
+    []
   ],
   "flexMode": "full-until-compact",
   "compactThreshold": 60,

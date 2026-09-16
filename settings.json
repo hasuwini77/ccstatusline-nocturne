@@ -8,7 +8,7 @@
         "customText": " ◆ ",
         "merge": "no-padding",
         "backgroundColor": "hex:5B3FD1",
-        "color": "hex:D5C9FF"
+        "color": "hex:FFFFFF"
       },
       {
         "id": "l1-padl",
@@ -40,7 +40,53 @@
         "color": "hex:7C5CFF"
       },
       {
-        "id": "sp-cap",
+        "id": "mark0",
+        "type": "custom-text",
+        "customText": "​",
+        "merge": "no-padding"
+      },
+      {
+        "id": "s1",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:79808E"
+      },
+      {
+        "id": "l1-lab",
+        "type": "custom-text",
+        "customText": "ctx  ",
+        "merge": "no-padding",
+        "color": "hex:F0C755"
+      },
+      {
+        "id": "l1-bar",
+        "type": "context-bar",
+        "rawValue": true,
+        "metadata": {
+          "display": "slider-only"
+        },
+        "color": "hex:6B5A28"
+      },
+      {
+        "id": "s1b",
+        "type": "separator",
+        "character": " ",
+        "color": "hex:79808E"
+      },
+      {
+        "id": "l1-pct",
+        "type": "context-percentage",
+        "rawValue": true,
+        "color": "hex:F0C755"
+      },
+      {
+        "id": "mark2-0",
+        "type": "custom-text",
+        "customText": "⁠",
+        "merge": "no-padding"
+      },
+      {
+        "id": "s2",
         "type": "separator",
         "character": " ▏ ",
         "color": "hex:79808E"
@@ -52,38 +98,10 @@
         "color": "hex:3E8E5A"
       },
       {
-        "id": "s2",
-        "type": "separator",
-        "character": " ▏ ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l1-ctxlab",
+        "id": "mark3-0",
         "type": "custom-text",
-        "customText": "ctx ",
-        "merge": "no-padding",
-        "color": "hex:F0C755"
-      },
-      {
-        "id": "l1-ctxbar",
-        "type": "context-bar",
-        "rawValue": true,
-        "metadata": {
-          "display": "slider-only"
-        },
-        "color": "hex:6B5A28"
-      },
-      {
-        "id": "sp-ctx",
-        "type": "separator",
-        "character": " ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l1-ctxpct",
-        "type": "context-percentage",
-        "rawValue": true,
-        "color": "hex:F0C755"
+        "customText": "⁡",
+        "merge": "no-padding"
       },
       {
         "id": "s3",
@@ -96,30 +114,6 @@
         "type": "output-speed",
         "rawValue": true,
         "color": "hex:5B9BE8"
-      },
-      {
-        "id": "s4",
-        "type": "separator",
-        "character": " ▏ ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l1-status",
-        "type": "claude-status",
-        "rawValue": true,
-        "color": "hex:3E8E5A"
-      },
-      {
-        "id": "s5",
-        "type": "separator",
-        "character": " ▏ ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l1-cost",
-        "type": "session-cost",
-        "rawValue": true,
-        "color": "hex:7CE38B"
       }
     ],
     [
@@ -148,12 +142,12 @@
         "id": "l2-branch",
         "type": "git-branch",
         "rawValue": true,
-        "metadata": {
-          "hide": "no-git"
-        },
+        "bold": true,
         "color": "hex:0B0E14",
         "backgroundColor": "hex:2E9E7A",
-        "bold": true
+        "metadata": {
+          "hide": "no-git"
+        }
       },
       {
         "id": "l2-cap",
@@ -175,28 +169,71 @@
         }
       },
       {
-        "id": "l2-capsep",
+        "id": "mark1",
+        "type": "custom-text",
+        "customText": "​",
+        "merge": "no-padding"
+      },
+      {
+        "id": "s4",
         "type": "separator",
-        "character": "▏ ",
+        "character": " ▏ ",
         "color": "hex:79808E"
       },
       {
-        "id": "l2-ab",
-        "type": "git-ahead-behind",
-        "rawValue": true,
-        "metadata": {
-          "hide": "no-git,no-upstream,zero"
-        },
-        "color": "hex:6B7382"
+        "id": "l2-lab",
+        "type": "custom-text",
+        "customText": "week ",
+        "merge": "no-padding",
+        "color": "hex:F49AC2"
       },
       {
-        "id": "l2-changes",
-        "type": "git-changes",
+        "id": "l2-bar",
+        "type": "weekly-usage",
         "rawValue": true,
         "metadata": {
-          "hide": "no-git,zero"
+          "display": "slider-only"
         },
-        "color": "hex:E6B34A"
+        "color": "hex:7A3A57"
+      },
+      {
+        "id": "s4b",
+        "type": "separator",
+        "character": " ",
+        "color": "hex:79808E"
+      },
+      {
+        "id": "l2-pct",
+        "type": "weekly-usage",
+        "rawValue": true,
+        "color": "hex:F49AC2"
+      },
+      {
+        "id": "mark2-1",
+        "type": "custom-text",
+        "customText": "⁠",
+        "merge": "no-padding"
+      },
+      {
+        "id": "s5",
+        "type": "separator",
+        "character": " ▏ ",
+        "color": "hex:79808E"
+      },
+      {
+        "id": "l2-reset",
+        "type": "weekly-reset-timer",
+        "rawValue": true,
+        "metadata": {
+          "compact": "true"
+        },
+        "color": "hex:D874A2"
+      },
+      {
+        "id": "mark3-1",
+        "type": "custom-text",
+        "customText": "⁡",
+        "merge": "no-padding"
       },
       {
         "id": "s6",
@@ -205,47 +242,17 @@
         "color": "hex:79808E"
       },
       {
-        "id": "l2-slab",
+        "id": "l2-opuslab",
         "type": "custom-text",
-        "customText": "session ",
+        "customText": "fable ",
         "merge": "no-padding",
-        "color": "hex:E8903C"
+        "color": "hex:9A8FCB"
       },
       {
-        "id": "l2-session",
-        "type": "session-usage",
+        "id": "l2-opus",
+        "type": "fable-weekly-usage",
         "rawValue": true,
-        "metadata": {
-          "display": "slider-only"
-        },
-        "color": "hex:7A4A1E"
-      },
-      {
-        "id": "sp-ses",
-        "type": "separator",
-        "character": " ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l2-sespct",
-        "type": "session-usage",
-        "rawValue": true,
-        "color": "hex:E8903C"
-      },
-      {
-        "id": "dot-l2-reset",
-        "type": "separator",
-        "character": " ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l2-reset",
-        "type": "reset-timer",
-        "rawValue": true,
-        "metadata": {
-          "compact": "true"
-        },
-        "color": "hex:C97B3C"
+        "color": "hex:D6C9FF"
       },
       {
         "id": "s7",
@@ -254,47 +261,22 @@
         "color": "hex:79808E"
       },
       {
-        "id": "l2-wlab",
-        "type": "custom-text",
-        "customText": "week ",
-        "merge": "no-padding",
-        "color": "hex:B69CFF"
-      },
-      {
-        "id": "l2-weekly",
-        "type": "weekly-usage",
+        "id": "l2-cost",
+        "type": "session-cost",
         "rawValue": true,
-        "metadata": {
-          "display": "slider-only"
-        },
-        "color": "hex:6B4BA8"
+        "color": "hex:7CE38B"
       },
       {
-        "id": "sp-wk",
+        "id": "s8",
         "type": "separator",
-        "character": " ",
+        "character": " ▏ ",
         "color": "hex:79808E"
       },
       {
-        "id": "l2-wkpct",
-        "type": "weekly-usage",
+        "id": "l2-status",
+        "type": "claude-status",
         "rawValue": true,
-        "color": "hex:B69CFF"
-      },
-      {
-        "id": "dot-l2-wreset",
-        "type": "separator",
-        "character": " ",
-        "color": "hex:79808E"
-      },
-      {
-        "id": "l2-wreset",
-        "type": "weekly-reset-timer",
-        "rawValue": true,
-        "metadata": {
-          "compact": "true"
-        },
-        "color": "hex:8B79C9"
+        "color": "hex:3E8E5A"
       }
     ],
     []

@@ -372,13 +372,13 @@
       {
         "id": "l3-opuslab",
         "type": "custom-text",
-        "customText": "opus ",
+        "customText": "fable ",
         "merge": "no-padding",
         "color": "hex:896EB5"
       },
       {
         "id": "l3-opus",
-        "type": "weekly-opus-usage",
+        "type": "fable-weekly-usage",
         "rawValue": true,
         "color": "hex:D8C0F6"
       },

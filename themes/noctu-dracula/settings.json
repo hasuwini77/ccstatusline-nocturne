@@ -7,37 +7,37 @@
         "type": "custom-text",
         "customText": " ◆ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:B59BFD",
-        "color": "hex:FFFFFF"
+        "backgroundColor": "hex:7A64A1",
+        "color": "hex:F8F8F2"
       },
       {
         "id": "l1-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:7C4DFF"
+        "backgroundColor": "hex:BD93F9"
       },
       {
         "id": "l1-model",
         "type": "model",
         "rawValue": true,
         "bold": true,
-        "color": "hex:FAFAFA",
-        "backgroundColor": "hex:7C4DFF"
+        "color": "hex:282A36",
+        "backgroundColor": "hex:BD93F9"
       },
       {
         "id": "l1-padr",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:7C4DFF"
+        "backgroundColor": "hex:BD93F9"
       },
       {
         "id": "l1-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:7C4DFF"
+        "color": "hex:BD93F9"
       },
       {
         "id": "mark0",
@@ -49,14 +49,14 @@
         "id": "s1",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
         "id": "l1-lab",
         "type": "custom-text",
         "customText": "ctx  ",
         "merge": "no-padding",
-        "color": "hex:F6A434"
+        "color": "hex:F1FA8C"
       },
       {
         "id": "l1-bar",
@@ -65,19 +65,19 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:F7C073"
+        "color": "hex:747957"
       },
       {
         "id": "s1b",
         "type": "separator",
         "character": " ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
         "id": "l1-pct",
         "type": "context-percentage",
         "rawValue": true,
-        "color": "hex:F6A434"
+        "color": "hex:F1FA8C"
       },
       {
         "id": "mark2-0",
@@ -89,13 +89,13 @@
         "id": "s2",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
         "id": "l1-effort",
         "type": "thinking-effort",
         "rawValue": true,
-        "color": "hex:5B8C1F"
+        "color": "hex:50FA7B"
       },
       {
         "id": "mark3-0",
@@ -107,13 +107,13 @@
         "id": "s3",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
         "id": "l1-speed",
         "type": "output-speed",
         "rawValue": true,
-        "color": "hex:3E6AB8"
+        "color": "hex:8BE9FD"
       }
     ],
     [
@@ -122,8 +122,8 @@
         "type": "custom-text",
         "customText": "  ",
         "merge": "no-padding",
-        "backgroundColor": "hex:90D0D4",
-        "color": "hex:FFFFFF",
+        "backgroundColor": "hex:3E9C5C",
+        "color": "hex:F8F8F2",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -133,7 +133,7 @@
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:39ADB5",
+        "backgroundColor": "hex:50FA7B",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -142,19 +142,19 @@
         "id": "l2-branch",
         "type": "git-branch",
         "rawValue": true,
-        "color": "hex:FAFAFA",
-        "backgroundColor": "hex:39ADB5",
+        "bold": true,
+        "color": "hex:282A36",
+        "backgroundColor": "hex:50FA7B",
         "metadata": {
           "hide": "no-git"
-        },
-        "bold": true
+        }
       },
       {
         "id": "l2-cap",
         "type": "custom-text",
         "customText": "█",
         "merge": "no-padding",
-        "color": "hex:39ADB5",
+        "color": "hex:50FA7B",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -178,35 +178,35 @@
         "id": "s4",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
         "id": "l2-lab",
         "type": "custom-text",
-        "customText": "ses  ",
+        "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:F76D47"
+        "color": "hex:FF79C6"
       },
       {
         "id": "l2-bar",
-        "type": "session-usage",
+        "type": "weekly-usage",
         "rawValue": true,
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:F89A80"
+        "color": "hex:7A486D"
       },
       {
         "id": "s4b",
         "type": "separator",
         "character": " ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
         "id": "l2-pct",
-        "type": "session-usage",
+        "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:F76D47"
+        "color": "hex:FF79C6"
       },
       {
         "id": "mark2-1",
@@ -218,16 +218,16 @@
         "id": "s5",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
         "id": "l2-reset",
-        "type": "reset-timer",
+        "type": "weekly-reset-timer",
         "rawValue": true,
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:F88667"
+        "color": "hex:C965A2"
       },
       {
         "id": "mark3-1",
@@ -239,162 +239,47 @@
         "id": "s6",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
-        "id": "l2-changes",
-        "type": "git-changes",
+        "id": "l2-opuslab",
+        "type": "custom-text",
+        "customText": "fable ",
+        "merge": "no-padding",
+        "color": "hex:896EB5"
+      },
+      {
+        "id": "l2-opus",
+        "type": "fable-weekly-usage",
         "rawValue": true,
-        "metadata": {
-          "hide": "no-git,zero"
-        },
-        "color": "hex:B07000"
-      },
-      {
-        "id": "l2-cost",
-        "type": "session-cost",
-        "rawValue": true,
-        "color": "hex:5B8C1F"
-      }
-    ],
-    [
-      {
-        "id": "l3-icon",
-        "type": "custom-text",
-        "customText": " ▲ ",
-        "merge": "no-padding",
-        "backgroundColor": "hex:EE908E",
-        "color": "hex:FFFFFF"
-      },
-      {
-        "id": "l3-padl",
-        "type": "custom-text",
-        "customText": " ",
-        "merge": "no-padding",
-        "backgroundColor": "hex:E53935"
-      },
-      {
-        "id": "l3-label",
-        "type": "custom-text",
-        "customText": "limit",
-        "merge": "no-padding",
-        "backgroundColor": "hex:E53935",
-        "color": "hex:FAFAFA",
-        "bold": true
-      },
-      {
-        "id": "l3-padr",
-        "type": "custom-text",
-        "customText": " ",
-        "merge": "no-padding",
-        "backgroundColor": "hex:E53935"
-      },
-      {
-        "id": "l3-cap",
-        "type": "custom-text",
-        "customText": "",
-        "merge": "no-padding",
-        "color": "hex:E53935"
-      },
-      {
-        "id": "mark2",
-        "type": "custom-text",
-        "customText": "​",
-        "merge": "no-padding"
+        "color": "hex:D8C0F6"
       },
       {
         "id": "s7",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
-        "id": "l3-lab",
-        "type": "custom-text",
-        "customText": "week ",
-        "merge": "no-padding",
-        "color": "hex:E53935"
-      },
-      {
-        "id": "l3-bar",
-        "type": "weekly-usage",
+        "id": "l2-cost",
+        "type": "session-cost",
         "rawValue": true,
-        "metadata": {
-          "display": "slider-only"
-        },
-        "color": "hex:EC7774"
-      },
-      {
-        "id": "s7b",
-        "type": "separator",
-        "character": " ",
-        "color": "hex:90A4AE"
-      },
-      {
-        "id": "l3-pct",
-        "type": "weekly-usage",
-        "rawValue": true,
-        "color": "hex:E53935"
-      },
-      {
-        "id": "mark2-2",
-        "type": "custom-text",
-        "customText": "⁠",
-        "merge": "no-padding"
+        "color": "hex:50FA7B"
       },
       {
         "id": "s8",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:90A4AE"
+        "color": "hex:6272A4"
       },
       {
-        "id": "l3-reset",
-        "type": "weekly-reset-timer",
-        "rawValue": true,
-        "metadata": {
-          "compact": "true"
-        },
-        "color": "hex:E95C58"
-      },
-      {
-        "id": "mark3-2",
-        "type": "custom-text",
-        "customText": "⁡",
-        "merge": "no-padding"
-      },
-      {
-        "id": "s9",
-        "type": "separator",
-        "character": " ▏ ",
-        "color": "hex:90A4AE"
-      },
-      {
-        "id": "l3-opuslab",
-        "type": "custom-text",
-        "customText": "fable ",
-        "merge": "no-padding",
-        "color": "hex:9570FE"
-      },
-      {
-        "id": "l3-opus",
-        "type": "fable-weekly-usage",
-        "rawValue": true,
-        "color": "hex:7255DE"
-      },
-      {
-        "id": "s10",
-        "type": "separator",
-        "character": " ▏ ",
-        "color": "hex:90A4AE"
-      },
-      {
-        "id": "l3-status",
+        "id": "l2-status",
         "type": "claude-status",
         "rawValue": true,
-        "color": "hex:5B8C1F"
+        "color": "hex:50FA7B"
       }
-    ]
+    ],
+    []
   ],
   "flexMode": "full-until-compact",
   "compactThreshold": 60,
