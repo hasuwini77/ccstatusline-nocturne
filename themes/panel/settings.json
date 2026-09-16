@@ -263,22 +263,22 @@
         "type": "custom-text",
         "customText": " ▲ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:8C3B63",
-        "color": "hex:FBD3E4"
+        "backgroundColor": "hex:5B3FD1",
+        "color": "hex:FFFFFF"
       },
       {
         "id": "l3-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:F49AC2"
+        "backgroundColor": "hex:B69CFF"
       },
       {
         "id": "l3-label",
         "type": "custom-text",
         "customText": "limit",
         "merge": "no-padding",
-        "backgroundColor": "hex:F49AC2",
+        "backgroundColor": "hex:B69CFF",
         "color": "hex:0B0E14",
         "bold": true
       },
@@ -287,14 +287,14 @@
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:F49AC2"
+        "backgroundColor": "hex:B69CFF"
       },
       {
         "id": "l3-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:F49AC2"
+        "color": "hex:B69CFF"
       },
       {
         "id": "mark2",
@@ -313,7 +313,7 @@
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:F49AC2"
+        "color": "hex:B69CFF"
       },
       {
         "id": "l3-bar",
@@ -322,7 +322,7 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:7A3A57"
+        "color": "hex:463A6B"
       },
       {
         "id": "s7b",
@@ -334,7 +334,7 @@
         "id": "l3-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:F49AC2"
+        "color": "hex:B69CFF"
       },
       {
         "id": "mark2-2",
@@ -355,7 +355,7 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:D874A2"
+        "color": "hex:8B79C9"
       },
       {
         "id": "mark3-2",
@@ -374,13 +374,13 @@
         "type": "custom-text",
         "customText": "fable ",
         "merge": "no-padding",
-        "color": "hex:9A8FCB"
+        "color": "hex:9C4A4A"
       },
       {
         "id": "l3-opus",
         "type": "fable-weekly-usage",
         "rawValue": true,
-        "color": "hex:D6C9FF"
+        "color": "hex:FF6B6B"
       },
       {
         "id": "s10",

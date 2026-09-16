@@ -185,7 +185,7 @@
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:F49AC2"
+        "color": "hex:B69CFF"
       },
       {
         "id": "l2-bar",
@@ -194,7 +194,7 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:7A3A57"
+        "color": "hex:463A6B"
       },
       {
         "id": "s4b",
@@ -206,7 +206,7 @@
         "id": "l2-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:F49AC2"
+        "color": "hex:B69CFF"
       },
       {
         "id": "mark2-1",
@@ -227,7 +227,7 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:D874A2"
+        "color": "hex:8B79C9"
       },
       {
         "id": "mark3-1",
@@ -246,13 +246,13 @@
         "type": "custom-text",
         "customText": "fable ",
         "merge": "no-padding",
-        "color": "hex:9A8FCB"
+        "color": "hex:9C4A4A"
       },
       {
         "id": "l2-opus",
         "type": "fable-weekly-usage",
         "rawValue": true,
-        "color": "hex:D6C9FF"
+        "color": "hex:FF6B6B"
       },
       {
         "id": "s7",

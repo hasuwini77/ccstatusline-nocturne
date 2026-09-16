@@ -246,13 +246,13 @@
         "type": "custom-text",
         "customText": "fable ",
         "merge": "no-padding",
-        "color": "hex:906FAE"
+        "color": "hex:96525E"
       },
       {
         "id": "l2-opus",
         "type": "fable-weekly-usage",
         "rawValue": true,
-        "color": "hex:B89EDD"
+        "color": "hex:F07178"
       },
       {
         "id": "s7",

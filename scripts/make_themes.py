@@ -80,8 +80,8 @@ def colours(pal):
       'ses_timer': mix(pal['ses'], bg, timer_t), 'week_timer': mix(pal['week'], bg, timer_t),
       'effort': pal['green'], 'speed': pal['blue'], 'cost': pal['green'],
       'changes': pal['yellow'], 'status': pal['green'],
-      'opus': mix(model, fg, .25 if light else .45),
-      'opuslab': mix(model, bg, .20 if light else .35),
+      'opus': pal['red'],
+      'opuslab': mix(pal['red'], bg, .20 if light else .45),
       'sep': pal['sep'],
     }
 
@@ -103,20 +103,20 @@ def paint(template, roles, values):
 
 PALETTES = {
  'nocturne': dict(bg='0B0E14', fg='C6CCDA', glyph='FFFFFF', model='7C5CFF', branch='2E9E7A',
-    limit='F49AC2', ctx='F0C755', ses='E8903C', week='F49AC2', green='3E8E5A', blue='5B9BE8',
-    yellow='E6B34A', sep='79808E'),
+    limit='B69CFF', ctx='F0C755', ses='E8903C', week='B69CFF', green='3E8E5A', blue='5B9BE8',
+    yellow='E6B34A', sep='79808E', red='FF6B6B'),
  'palenight': dict(bg='292D3E', fg='A6ACCD', glyph='FFFFFF', model='C792EA', branch='C3E88D',
     limit='FF9CAC', ctx='FFCB6B', ses='F78C6C', week='FF9CAC', green='C3E88D', blue='82AAFF',
-    yellow='FFCB6B', sep='5C6685'),
+    yellow='FFCB6B', sep='5C6685', red='F07178'),
  'dracula': dict(bg='282A36', fg='F8F8F2', glyph='F8F8F2', model='BD93F9', branch='50FA7B',
     limit='FF79C6', ctx='F1FA8C', ses='FFB86C', week='FF79C6', green='50FA7B', blue='8BE9FD',
-    yellow='F1FA8C', sep='6272A4'),
+    yellow='F1FA8C', sep='6272A4', red='FF5555'),
  'tokyo-night': dict(bg='1A1B26', fg='A9B1D6', glyph='FFFFFF', model='BB9AF7', branch='9ECE6A',
     limit='F7768E', ctx='E0AF68', ses='FF9E64', week='F7768E', green='9ECE6A', blue='7AA2F7',
-    yellow='E0AF68', sep='565F89'),
+    yellow='E0AF68', sep='565F89', red='F7768E'),
  'material-light': dict(bg='FAFAFA', fg='546E7A', glyph='FFFFFF', model='7C4DFF', branch='39ADB5',
     limit='E53935', ctx='F6A434', ses='F76D47', week='E53935', green='5B8C1F', blue='3E6AB8',
-    yellow='B07000', sep='90A4AE', light=True),
+    yellow='B07000', sep='90A4AE', light=True, red='E53935'),
 }
 
 if __name__ == '__main__':

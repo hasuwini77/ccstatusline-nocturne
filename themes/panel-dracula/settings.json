@@ -374,13 +374,13 @@
         "type": "custom-text",
         "customText": "fable ",
         "merge": "no-padding",
-        "color": "hex:896EB5"
+        "color": "hex:9E4247"
       },
       {
         "id": "l3-opus",
         "type": "fable-weekly-usage",
         "rawValue": true,
-        "color": "hex:D8C0F6"
+        "color": "hex:FF5555"
       },
       {
         "id": "s10",
