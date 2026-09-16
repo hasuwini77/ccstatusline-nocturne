@@ -21,3 +21,14 @@ A two-line status line built on one rule: the bar recedes, the number speaks. Ev
 4. **Feature both on the profile README** (`hasuwini77/hasuwini77`).
 5. **Submit to awesome-claude-code** — an accepted list entry is a durable discovery channel, unlike a post.
 6. **r/ClaudeAI or r/commandline** — screenshot first, link second. Image posts carry; link posts sink.
+
+---
+
+## Per-theme gallery entries
+
+Submit them as separate cards — each is its own discovery door back to the same repo.
+
+- **Nocturne** — tags: Git · Tokens · Cost · Usage · Multi-Line. (Use the description above.)
+- **Nocturne Flat** — "The same layout with no Nerd Font requirement: not one private-use glyph, so it renders correctly over SSH, in a bare terminal, or anywhere patched fonts aren't installed. Muted bars, bright values, plain dividers."
+- **Nocturne Powerline** — "The classic filled-block treatment of the same layout: every field a coloured segment with arrow separators, bars muted so the numbers still lead."
+- **Nocturne Light** — "Built for light terminals. The palette is re-derived rather than inverted — bars go pale, values go deep — so contrast holds on white."
