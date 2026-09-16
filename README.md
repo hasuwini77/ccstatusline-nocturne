@@ -91,6 +91,18 @@ About 25 ms per render. The launcher skips it when the script isn't there, so no
 
 `statusline.sh` also hands the globally installed ccstatusline straight to node instead of going through `npx`, which otherwise re-bootstraps the npm CLI on **every single render**.
 
+## No ccstatusline? One file, no dependencies
+
+[`standalone/noctu.py`](standalone/noctu.py) is the same design as a single script that reads the session JSON and prints two rows — no packages, no network, nothing to install.
+
+![standalone](standalone/preview.png)
+
+```json
+"statusLine": { "type": "command", "command": "python3 ~/.claude/noctu.py", "padding": 0 }
+```
+
+It carries model, context, git, cost, duration and lines changed. It cannot carry the session and weekly meters — those need the usage endpoint, and a script with no network access can't reach it. Released under CC0 so it can be shared in galleries that require it.
+
 ## Make your own palette
 
 Themes aren't hand-coloured. `scripts/make_themes.py` maps one palette definition onto widget **roles** — chip bodies, icon cells, each meter's bar/value pair, timers, accents — and derives the muted bars by blending each accent toward that theme's own background. Add eight lines and run it:
