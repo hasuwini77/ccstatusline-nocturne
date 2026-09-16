@@ -101,7 +101,7 @@ About 25 ms per render. The launcher skips it when the script isn't there, so no
 "statusLine": { "type": "command", "command": "python3 ~/.claude/noctu.py", "padding": 0 }
 ```
 
-It carries model, context, effort, git, the weekly limit with its reset, cost, duration and lines changed, all read from the session JSON with no network access. Only the Fable window needs the usage endpoint, so that stays with the themes. Released under CC0 so it can be shared in galleries that require it.
+It carries model, context, effort, git, the weekly limit with its reset, cost, duration and lines changed, all read from the session JSON with no network access. Only the Fable window needs the usage endpoint. [`standalone/noctu-fable.py`](standalone/noctu-fable.py) adds it, by reading your Claude Code token and calling `api.anthropic.com`. Released under CC0 so it can be shared in galleries that require it.
 
 ## Make your own palette
 

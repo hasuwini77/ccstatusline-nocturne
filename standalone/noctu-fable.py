@@ -14,13 +14,26 @@ plus a bright value, and only the model and the branch get filled badges,
 because only those two are identity. The columns are aligned by measuring
 each row rather than padding to a guess, so they hold with any branch name.
 """
+# plain:begin
 # This variant makes no network calls and reads no credentials. For the weekly
 # Fable window too, use noctu-fable.py.
+# plain:end
+# fable:begin
+# Fable variant: the weekly Fable window only comes from Anthropic's usage
+# endpoint, so this file reads your Claude Code OAuth token (the
+# CLAUDE_CODE_OAUTH_TOKEN env var, ~/.claude/.credentials.json, or the macOS
+# Keychain entry "Claude Code-credentials") and calls api.anthropic.com with
+# it, at most once every three minutes. The token goes nowhere else.
+# Without the token or the network it shows a dim dash.
+# fable:end
 import json
 import os
 import subprocess
 import sys
 import time
+# fable:begin
+import urllib.request
+# fable:end
 
 # palette (hex -> truecolor SGR)
 VIOLET, VIOLET_DK = '7C5CFF', '5B3FD1'
@@ -32,6 +45,12 @@ PURPLE, PURPLE_BAR, PURPLE_DIM = 'B69CFF', '463A6B', '8B79C9'
 ORANGE, ORANGE_BAR, ORANGE_DIM = 'E8903C', '7A4A1E', 'C97B3C'
 GREEN, BLUE, DIM, INK, WHITE = '7CE38B', '5B9BE8', '79808E', '0B0E14', 'FFFFFF'
 EFFORT = '3E8E5A'
+# fable:begin
+RED, RED_LABEL = 'FF6B6B', '9C4A4A'
+USAGE_URL = 'https://api.anthropic.com/api/oauth/usage'
+USAGE_CACHE = os.path.join(os.path.expanduser('~'), '.cache', 'noctu', 'usage.json')
+USAGE_TTL, USAGE_RETRY = 180, 60
+# fable:end
 BAR_FULL, BAR_EMPTY, ARROW, DIVIDER, BRANCH_ICON, DIAMOND = '\u2593', '\u2591', '\ue0b0', '\u258f', '\uf418', '\u25c6'
 BAR_WIDTH = 10
 
@@ -91,6 +110,68 @@ def limit_meter(limits):
     return dim_meter('week'), fg(DIM) + '\u2014' + RESET
 
 
+# fable:begin
+def claude_token():
+    """Claude Code's OAuth access token, from wherever Claude Code keeps it."""
+    token = os.environ.get('CLAUDE_CODE_OAUTH_TOKEN')
+    if token:
+        return token
+    try:
+        with open(os.path.join(os.path.expanduser('~'), '.claude', '.credentials.json')) as fh:
+            return json.load(fh)['claudeAiOauth']['accessToken']
+    except (OSError, ValueError, KeyError, TypeError):
+        pass
+    if sys.platform == 'darwin':
+        try:
+            out = subprocess.run(['security', 'find-generic-password', '-s', 'Claude Code-credentials', '-w'],
+                                 capture_output=True, text=True, timeout=2)
+            return json.loads(out.stdout)['claudeAiOauth']['accessToken']
+        except (OSError, subprocess.SubprocessError, ValueError, KeyError, TypeError):
+            pass
+    return None
+
+
+def parse_fable(usage):
+    """The Fable-scoped weekly limit; older responses carried it as seven_day_fable."""
+    for limit in usage.get('limits') or []:
+        scope = (limit or {}).get('scope') or {}
+        if limit.get('kind') == 'weekly_scoped' and (scope.get('model') or {}).get('display_name') == 'Fable':
+            return limit.get('percent')
+    return (usage.get('seven_day_fable') or {}).get('utilization')
+
+
+def fable_percent():
+    """Weekly Fable utilisation, cached on disk so renders don't each hit the API."""
+    try:
+        with open(USAGE_CACHE) as fh:
+            cached = json.load(fh)
+        ttl = USAGE_TTL if cached.get('fable') is not None else USAGE_RETRY
+        if time.time() - cached.get('fetched_at', 0) < ttl:
+            return cached.get('fable')
+    except (OSError, ValueError, AttributeError):
+        pass
+    fable = None
+    token = claude_token()
+    if token:
+        request = urllib.request.Request(USAGE_URL, headers={
+            'Authorization': 'Bearer ' + token, 'anthropic-beta': 'oauth-2025-04-20'})
+        try:
+            with urllib.request.urlopen(request, timeout=2) as res:
+                fable = parse_fable(json.load(res))
+        except (OSError, ValueError, AttributeError):
+            fable = None
+    try:
+        os.makedirs(os.path.dirname(USAGE_CACHE), exist_ok=True)
+        tmp = USAGE_CACHE + '.%d' % os.getpid()
+        with open(tmp, 'w') as fh:
+            json.dump({'fetched_at': time.time(), 'fable': fable}, fh)
+        os.replace(tmp, USAGE_CACHE)
+    except OSError:
+        pass
+    return fable
+
+
+# fable:end
 def context_percent(transcript, window):
     """Token usage of the most recent assistant turn, as a share of the window."""
     if not transcript or not os.path.exists(transcript):
@@ -179,6 +260,11 @@ def main():
     row1.append(fg(BLUE) + took + RESET if took else fg(DIM) + '\u2014' + RESET)
 
     row2 = list(limit_meter(data.get('rate_limits')))
+    # fable:begin
+    fable = fable_percent()
+    row2.append(fg(RED_LABEL) + 'fable ' + RESET + fg(RED) + '%d%%' % round(fable) + RESET
+                if isinstance(fable, (int, float)) else fg(DIM) + 'fable \u2014' + RESET)
+    # fable:end
     spent = cost.get('total_cost_usd')
     if spent is not None:
         row2.append(fg(GREEN) + '$%.2f' % spent + RESET)

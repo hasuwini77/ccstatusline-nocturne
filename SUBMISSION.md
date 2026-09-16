@@ -18,6 +18,18 @@ There's no edit button on the site, so ask hello@statuslin.es to withdraw v1.
 
 > Two aligned rows with muted bars and bright values: model, context, effort and session time, then git branch (or a muted no-git chip), weekly limit with reset countdown, cost and lines changed. Themed ccstatusline version at github.com/hasuwini77/ccstatusline-nocturne
 
+### Noctu + Fable — second entry, after Noctu's review
+
+`standalone/noctu-fable.py`, interpreter **python**. Turn **network access on** and declare `api.anthropic.com`. The card gets **Network Access** and **Reads Token** badges. The sandbox mocks the usage endpoint with a preview token, so it renders `fable 15%` (80% on the 1M session). statuslin.es's own credential and obfuscation scanners pass on both files: plain has no token badge, Fable only reads the Claude token.
+
+The site only lets you resubmit a *rejected* version. If Noctu is rejected, resubmit this file instead; if it's published, submit this as its own entry.
+
+**Title:** Noctu + Fable
+
+**Description:**
+
+> Noctu with the weekly Fable window: two aligned rows with muted bars and bright values, including context, effort, git branch, weekly limit with reset countdown, Fable usage, cost and lines changed. Reads your Claude Code token to query api.anthropic.com, cached three minutes.
+
 ---
 
 ## 2. awesome-claude-code — blocked until 2026-09-30
