@@ -121,8 +121,14 @@ def main():
     cwd = workspace.get('current_dir') or data.get('cwd') or os.getcwd()
     cost = data.get('cost') or {}
 
-    window = 1_000_000 if '[1m]' in model_id else 200_000
-    pct = context_percent(data.get('transcript_path'), window)
+    # Claude Code reports context usage directly; the transcript estimate is
+    # only a fallback for versions that predate context_window
+    ctx = data.get('context_window')
+    if isinstance(ctx, dict):
+        pct = ctx.get('used_percentage')
+    else:
+        window = 1_000_000 if '[1m]' in model_id else 200_000
+        pct = context_percent(data.get('transcript_path'), window)
 
     left = [chip(DIAMOND, model, VIOLET, VIOLET_DK)]
     branch = git_branch(cwd)
