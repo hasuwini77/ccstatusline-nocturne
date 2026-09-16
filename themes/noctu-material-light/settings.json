@@ -185,7 +185,7 @@
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:E53935"
+        "color": "hex:6182B8"
       },
       {
         "id": "l2-bar",
@@ -194,7 +194,7 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:EC7774"
+        "color": "hex:92A8CD"
       },
       {
         "id": "s4b",
@@ -206,7 +206,7 @@
         "id": "l2-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:E53935"
+        "color": "hex:6182B8"
       },
       {
         "id": "mark2-1",
@@ -227,7 +227,7 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:E95C58"
+        "color": "hex:7D98C4"
       },
       {
         "id": "mark3-1",

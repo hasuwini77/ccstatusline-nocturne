@@ -7,37 +7,37 @@
         "type": "custom-text",
         "customText": " ◆ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:4F6599",
-        "color": "hex:1A1B26"
+        "backgroundColor": "hex:865C67",
+        "color": "hex:282828"
       },
       {
         "id": "l1-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:7AA2F7"
+        "backgroundColor": "hex:D3869B"
       },
       {
         "id": "l1-model",
         "type": "model",
         "rawValue": true,
         "bold": true,
-        "color": "hex:1A1B26",
-        "backgroundColor": "hex:7AA2F7"
+        "color": "hex:282828",
+        "backgroundColor": "hex:D3869B"
       },
       {
         "id": "l1-padr",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:7AA2F7"
+        "backgroundColor": "hex:D3869B"
       },
       {
         "id": "l1-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:7AA2F7"
+        "color": "hex:D3869B"
       },
       {
         "id": "mark0",
@@ -49,14 +49,14 @@
         "id": "s1",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l1-lab",
         "type": "custom-text",
         "customText": "ctx  ",
         "merge": "no-padding",
-        "color": "hex:E0AF68"
+        "color": "hex:FABD2F"
       },
       {
         "id": "l1-bar",
@@ -65,19 +65,19 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:65533F"
+        "color": "hex:78612B"
       },
       {
         "id": "s1b",
         "type": "separator",
         "character": " ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l1-pct",
         "type": "context-percentage",
         "rawValue": true,
-        "color": "hex:E0AF68"
+        "color": "hex:FABD2F"
       },
       {
         "id": "mark2-0",
@@ -89,13 +89,13 @@
         "id": "s2",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l1-effort",
         "type": "thinking-effort",
         "rawValue": true,
-        "color": "hex:9ECE6A"
+        "color": "hex:B8BB26"
       },
       {
         "id": "mark3-0",
@@ -107,13 +107,13 @@
         "id": "s3",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l1-speed",
         "type": "output-speed",
         "rawValue": true,
-        "color": "hex:7DCFFF"
+        "color": "hex:83A598"
       }
     ],
     [
@@ -122,8 +122,8 @@
         "type": "custom-text",
         "customText": "  ",
         "merge": "no-padding",
-        "backgroundColor": "hex:637D4B",
-        "color": "hex:1A1B26",
+        "backgroundColor": "hex:777927",
+        "color": "hex:282828",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -133,7 +133,7 @@
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:9ECE6A",
+        "backgroundColor": "hex:B8BB26",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -143,8 +143,8 @@
         "type": "git-branch",
         "rawValue": true,
         "bold": true,
-        "color": "hex:1A1B26",
-        "backgroundColor": "hex:9ECE6A",
+        "color": "hex:282828",
+        "backgroundColor": "hex:B8BB26",
         "metadata": {
           "hide": "no-git"
         }
@@ -154,7 +154,7 @@
         "type": "custom-text",
         "customText": "█",
         "merge": "no-padding",
-        "color": "hex:9ECE6A",
+        "color": "hex:B8BB26",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -178,14 +178,14 @@
         "id": "s4",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l2-lab",
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:BB9AF7"
+        "color": "hex:FE8019"
       },
       {
         "id": "l2-bar",
@@ -194,19 +194,19 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:574B75"
+        "color": "hex:794922"
       },
       {
         "id": "s4b",
         "type": "separator",
         "character": " ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l2-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:BB9AF7"
+        "color": "hex:FE8019"
       },
       {
         "id": "mark2-1",
@@ -218,7 +218,7 @@
         "id": "s5",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l2-reset",
@@ -227,7 +227,7 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:937AC3"
+        "color": "hex:C86A1D"
       },
       {
         "id": "mark3-1",
@@ -239,44 +239,44 @@
         "id": "s6",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l2-opuslab",
         "type": "custom-text",
         "customText": "fable ",
         "merge": "no-padding",
-        "color": "hex:944D5F"
+        "color": "hex:9C3A2F"
       },
       {
         "id": "l2-opus",
         "type": "fable-weekly-usage",
         "rawValue": true,
-        "color": "hex:F7768E"
+        "color": "hex:FB4934"
       },
       {
         "id": "s7",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l2-cost",
         "type": "session-cost",
         "rawValue": true,
-        "color": "hex:9ECE6A"
+        "color": "hex:B8BB26"
       },
       {
         "id": "s8",
         "type": "separator",
         "character": " ▏ ",
-        "color": "hex:565F89"
+        "color": "hex:665C54"
       },
       {
         "id": "l2-status",
         "type": "claude-status",
         "rawValue": true,
-        "color": "hex:9ECE6A"
+        "color": "hex:B8BB26"
       }
     ],
     []

@@ -2,14 +2,14 @@
 
 # Noctu
 
-**Status line themes for [Claude Code](https://claude.com/claude-code)** — two layouts, five palettes, one rule:
+**Status line themes for [Claude Code](https://claude.com/claude-code)** — two layouts, seven palettes, one rule:
 *the bar recedes, the number speaks.*
 
 ![Noctu](themes/noctu/preview.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-7C5CFF.svg?style=flat-square)](LICENSE)
 [![ccstatusline](https://img.shields.io/badge/ccstatusline-%E2%89%A5%202.2.29-2E9E7A?style=flat-square)](https://github.com/sirmalloc/ccstatusline)
-[![Themes](https://img.shields.io/badge/themes-10-B69CFF?style=flat-square)](#pick-a-theme)
+[![Themes](https://img.shields.io/badge/themes-14-B69CFF?style=flat-square)](#pick-a-theme)
 
 </div>
 
@@ -61,16 +61,22 @@ Adds the 5-hour session window as its own row, with cost and change counts besid
 
 ### The palettes
 
-Both layouts ship in all five. `themes/noctu-dracula`, `themes/panel-tokyo-night`, and so on.
+Both layouts ship in all seven — `themes/noctu-dracula`, `themes/panel-nord`, and so on. **Each leads with its own signature colour** rather than every theme defaulting to a purple model chip, so they're told apart at a glance.
 
-**Dracula**
+**Dracula** — leads pink
 ![dracula](themes/noctu-dracula/preview.png)
 
-**Tokyo Night**
+**Tokyo Night** — leads blue
 ![tokyo night](themes/noctu-tokyo-night/preview.png)
 
-**Palenight**
+**Palenight** — leads cyan
 ![palenight](themes/noctu-palenight/preview.png)
+
+**Nord** — cold and low-chroma, no warm accent anywhere
+![nord](themes/noctu-nord/preview.png)
+
+**Gruvbox** — warm and earthy, the far end from Nord
+![gruvbox](themes/noctu-gruvbox/preview.png)
 
 **Material Light** — for light terminals, and not a dark theme inverted: its bars blend far less toward the background, because at the dark value they wash out to nothing on white.
 ![material light](themes/panel-material-light/preview.png)

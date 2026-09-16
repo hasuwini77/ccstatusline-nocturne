@@ -7,15 +7,15 @@
         "type": "custom-text",
         "customText": " ◆ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:80659D",
-        "color": "hex:FFFFFF"
+        "backgroundColor": "hex:5E8EA8",
+        "color": "hex:292D3E"
       },
       {
         "id": "l1-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:C792EA"
+        "backgroundColor": "hex:89DDFF"
       },
       {
         "id": "l1-model",
@@ -23,21 +23,21 @@
         "rawValue": true,
         "bold": true,
         "color": "hex:292D3E",
-        "backgroundColor": "hex:C792EA"
+        "backgroundColor": "hex:89DDFF"
       },
       {
         "id": "l1-padr",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:C792EA"
+        "backgroundColor": "hex:89DDFF"
       },
       {
         "id": "l1-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:C792EA"
+        "color": "hex:89DDFF"
       },
       {
         "id": "mark0",
@@ -123,7 +123,7 @@
         "customText": "  ",
         "merge": "no-padding",
         "backgroundColor": "hex:7E9469",
-        "color": "hex:FFFFFF",
+        "color": "hex:292D3E",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -185,7 +185,7 @@
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:FF9CAC"
+        "color": "hex:C792EA"
       },
       {
         "id": "l2-bar",
@@ -194,7 +194,7 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:7A5768"
+        "color": "hex:65537F"
       },
       {
         "id": "s4b",
@@ -206,7 +206,7 @@
         "id": "l2-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:FF9CAC"
+        "color": "hex:C792EA"
       },
       {
         "id": "mark2-1",
@@ -227,7 +227,7 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:CA8090"
+        "color": "hex:A079BF"
       },
       {
         "id": "mark3-1",

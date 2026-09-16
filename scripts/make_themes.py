@@ -102,21 +102,35 @@ def paint(template, roles, values):
 
 
 PALETTES = {
+ # Each palette leads with its own signature colour rather than all of them
+ # defaulting to purple/green, or they end up indistinguishable.
  'nocturne': dict(bg='0B0E14', fg='C6CCDA', glyph='FFFFFF', model='7C5CFF', branch='2E9E7A',
     limit='B69CFF', ctx='F0C755', ses='E8903C', week='B69CFF', green='3E8E5A', blue='5B9BE8',
-    yellow='E6B34A', sep='79808E', red='FF6B6B'),
- 'palenight': dict(bg='292D3E', fg='A6ACCD', glyph='FFFFFF', model='C792EA', branch='C3E88D',
-    limit='FF9CAC', ctx='FFCB6B', ses='F78C6C', week='FF9CAC', green='C3E88D', blue='82AAFF',
-    yellow='FFCB6B', sep='5C6685', red='F07178'),
- 'dracula': dict(bg='282A36', fg='F8F8F2', glyph='F8F8F2', model='BD93F9', branch='50FA7B',
-    limit='FF79C6', ctx='F1FA8C', ses='FFB86C', week='FF79C6', green='50FA7B', blue='8BE9FD',
-    yellow='F1FA8C', sep='6272A4', red='FF5555'),
- 'tokyo-night': dict(bg='1A1B26', fg='A9B1D6', glyph='FFFFFF', model='BB9AF7', branch='9ECE6A',
-    limit='F7768E', ctx='E0AF68', ses='FF9E64', week='F7768E', green='9ECE6A', blue='7AA2F7',
-    yellow='E0AF68', sep='565F89', red='F7768E'),
+    yellow='E6B34A', red='FF6B6B', sep='79808E'),
+ # Dracula leads pink
+ 'dracula': dict(bg='282A36', fg='F8F8F2', glyph='282A36', model='FF79C6', branch='50FA7B',
+    limit='BD93F9', ctx='F1FA8C', ses='FFB86C', week='BD93F9', green='50FA7B', blue='8BE9FD',
+    yellow='F1FA8C', red='FF5555', sep='6272A4'),
+ # Tokyo Night leads blue
+ 'tokyo-night': dict(bg='1A1B26', fg='A9B1D6', glyph='1A1B26', model='7AA2F7', branch='9ECE6A',
+    limit='BB9AF7', ctx='E0AF68', ses='FF9E64', week='BB9AF7', green='9ECE6A', blue='7DCFFF',
+    yellow='E0AF68', red='F7768E', sep='565F89'),
+ # Palenight leads cyan
+ 'palenight': dict(bg='292D3E', fg='A6ACCD', glyph='292D3E', model='89DDFF', branch='C3E88D',
+    limit='C792EA', ctx='FFCB6B', ses='F78C6C', week='C792EA', green='C3E88D', blue='82AAFF',
+    yellow='FFCB6B', red='F07178', sep='5C6685'),
+ # Nord: cold, low chroma, no warm accents at all
+ 'nord': dict(bg='2E3440', fg='D8DEE9', glyph='2E3440', model='88C0D0', branch='A3BE8C',
+    limit='B48EAD', ctx='EBCB8B', ses='D08770', week='B48EAD', green='A3BE8C', blue='81A1C1',
+    yellow='EBCB8B', red='BF616A', sep='4C566A'),
+ # Gruvbox: warm and earthy, the opposite end from Nord
+ 'gruvbox': dict(bg='282828', fg='EBDBB2', glyph='282828', model='D3869B', branch='B8BB26',
+    limit='FE8019', ctx='FABD2F', ses='8EC07C', week='FE8019', green='B8BB26', blue='83A598',
+    yellow='FABD2F', red='FB4934', sep='665C54'),
+ # Material Light: the only light one
  'material-light': dict(bg='FAFAFA', fg='546E7A', glyph='FFFFFF', model='7C4DFF', branch='39ADB5',
-    limit='E53935', ctx='F6A434', ses='F76D47', week='E53935', green='5B8C1F', blue='3E6AB8',
-    yellow='B07000', sep='90A4AE', light=True, red='E53935'),
+    limit='6182B8', ctx='F6A434', ses='F76D47', week='6182B8', green='5B8C1F', blue='3E6AB8',
+    yellow='B07000', red='E53935', sep='90A4AE', light=True),
 }
 
 if __name__ == '__main__':

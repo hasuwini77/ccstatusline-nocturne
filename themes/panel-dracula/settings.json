@@ -7,15 +7,15 @@
         "type": "custom-text",
         "customText": " ◆ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:7A64A1",
-        "color": "hex:F8F8F2"
+        "backgroundColor": "hex:9E5585",
+        "color": "hex:282A36"
       },
       {
         "id": "l1-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:BD93F9"
+        "backgroundColor": "hex:FF79C6"
       },
       {
         "id": "l1-model",
@@ -23,21 +23,21 @@
         "rawValue": true,
         "bold": true,
         "color": "hex:282A36",
-        "backgroundColor": "hex:BD93F9"
+        "backgroundColor": "hex:FF79C6"
       },
       {
         "id": "l1-padr",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:BD93F9"
+        "backgroundColor": "hex:FF79C6"
       },
       {
         "id": "l1-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:BD93F9"
+        "color": "hex:FF79C6"
       },
       {
         "id": "mark0",
@@ -123,7 +123,7 @@
         "customText": "  ",
         "merge": "no-padding",
         "backgroundColor": "hex:3E9C5C",
-        "color": "hex:F8F8F2",
+        "color": "hex:282A36",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -263,22 +263,22 @@
         "type": "custom-text",
         "customText": " ▲ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:9E5585",
-        "color": "hex:F8F8F2"
+        "backgroundColor": "hex:7A64A1",
+        "color": "hex:282A36"
       },
       {
         "id": "l3-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:FF79C6"
+        "backgroundColor": "hex:BD93F9"
       },
       {
         "id": "l3-label",
         "type": "custom-text",
         "customText": "limit",
         "merge": "no-padding",
-        "backgroundColor": "hex:FF79C6",
+        "backgroundColor": "hex:BD93F9",
         "color": "hex:282A36",
         "bold": true
       },
@@ -287,14 +287,14 @@
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:FF79C6"
+        "backgroundColor": "hex:BD93F9"
       },
       {
         "id": "l3-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:FF79C6"
+        "color": "hex:BD93F9"
       },
       {
         "id": "mark2",
@@ -313,7 +313,7 @@
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:FF79C6"
+        "color": "hex:BD93F9"
       },
       {
         "id": "l3-bar",
@@ -322,7 +322,7 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:7A486D"
+        "color": "hex:615280"
       },
       {
         "id": "s7b",
@@ -334,7 +334,7 @@
         "id": "l3-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:FF79C6"
+        "color": "hex:BD93F9"
       },
       {
         "id": "mark2-2",
@@ -355,7 +355,7 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:C965A2"
+        "color": "hex:9879C8"
       },
       {
         "id": "mark3-2",

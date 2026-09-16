@@ -7,15 +7,15 @@
         "type": "custom-text",
         "customText": " ◆ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:736199",
-        "color": "hex:FFFFFF"
+        "backgroundColor": "hex:4F6599",
+        "color": "hex:1A1B26"
       },
       {
         "id": "l1-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:BB9AF7"
+        "backgroundColor": "hex:7AA2F7"
       },
       {
         "id": "l1-model",
@@ -23,21 +23,21 @@
         "rawValue": true,
         "bold": true,
         "color": "hex:1A1B26",
-        "backgroundColor": "hex:BB9AF7"
+        "backgroundColor": "hex:7AA2F7"
       },
       {
         "id": "l1-padr",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:BB9AF7"
+        "backgroundColor": "hex:7AA2F7"
       },
       {
         "id": "l1-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:BB9AF7"
+        "color": "hex:7AA2F7"
       },
       {
         "id": "mark0",
@@ -113,7 +113,7 @@
         "id": "l1-speed",
         "type": "output-speed",
         "rawValue": true,
-        "color": "hex:7AA2F7"
+        "color": "hex:7DCFFF"
       }
     ],
     [
@@ -123,7 +123,7 @@
         "customText": "  ",
         "merge": "no-padding",
         "backgroundColor": "hex:637D4B",
-        "color": "hex:FFFFFF",
+        "color": "hex:1A1B26",
         "metadata": {
           "hide": "merge-target-hidden"
         }
@@ -263,22 +263,22 @@
         "type": "custom-text",
         "customText": " ▲ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:944D5F",
-        "color": "hex:FFFFFF"
+        "backgroundColor": "hex:736199",
+        "color": "hex:1A1B26"
       },
       {
         "id": "l3-padl",
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:F7768E"
+        "backgroundColor": "hex:BB9AF7"
       },
       {
         "id": "l3-label",
         "type": "custom-text",
         "customText": "limit",
         "merge": "no-padding",
-        "backgroundColor": "hex:F7768E",
+        "backgroundColor": "hex:BB9AF7",
         "color": "hex:1A1B26",
         "bold": true
       },
@@ -287,14 +287,14 @@
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:F7768E"
+        "backgroundColor": "hex:BB9AF7"
       },
       {
         "id": "l3-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:F7768E"
+        "color": "hex:BB9AF7"
       },
       {
         "id": "mark2",
@@ -313,7 +313,7 @@
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:F7768E"
+        "color": "hex:BB9AF7"
       },
       {
         "id": "l3-bar",
@@ -322,7 +322,7 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:6E3E4E"
+        "color": "hex:574B75"
       },
       {
         "id": "s7b",
@@ -334,7 +334,7 @@
         "id": "l3-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:F7768E"
+        "color": "hex:BB9AF7"
       },
       {
         "id": "mark2-2",
@@ -355,7 +355,7 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:C05F74"
+        "color": "hex:937AC3"
       },
       {
         "id": "mark3-2",

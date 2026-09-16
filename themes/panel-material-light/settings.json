@@ -263,7 +263,7 @@
         "type": "custom-text",
         "customText": " ▲ ",
         "merge": "no-padding",
-        "backgroundColor": "hex:EE908E",
+        "backgroundColor": "hex:A6B8D6",
         "color": "hex:FFFFFF"
       },
       {
@@ -271,14 +271,14 @@
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:E53935"
+        "backgroundColor": "hex:6182B8"
       },
       {
         "id": "l3-label",
         "type": "custom-text",
         "customText": "limit",
         "merge": "no-padding",
-        "backgroundColor": "hex:E53935",
+        "backgroundColor": "hex:6182B8",
         "color": "hex:FAFAFA",
         "bold": true
       },
@@ -287,14 +287,14 @@
         "type": "custom-text",
         "customText": " ",
         "merge": "no-padding",
-        "backgroundColor": "hex:E53935"
+        "backgroundColor": "hex:6182B8"
       },
       {
         "id": "l3-cap",
         "type": "custom-text",
         "customText": "",
         "merge": "no-padding",
-        "color": "hex:E53935"
+        "color": "hex:6182B8"
       },
       {
         "id": "mark2",
@@ -313,7 +313,7 @@
         "type": "custom-text",
         "customText": "week ",
         "merge": "no-padding",
-        "color": "hex:E53935"
+        "color": "hex:6182B8"
       },
       {
         "id": "l3-bar",
@@ -322,7 +322,7 @@
         "metadata": {
           "display": "slider-only"
         },
-        "color": "hex:EC7774"
+        "color": "hex:92A8CD"
       },
       {
         "id": "s7b",
@@ -334,7 +334,7 @@
         "id": "l3-pct",
         "type": "weekly-usage",
         "rawValue": true,
-        "color": "hex:E53935"
+        "color": "hex:6182B8"
       },
       {
         "id": "mark2-2",
@@ -355,7 +355,7 @@
         "metadata": {
           "compact": "true"
         },
-        "color": "hex:E95C58"
+        "color": "hex:7D98C4"
       },
       {
         "id": "mark3-2",
