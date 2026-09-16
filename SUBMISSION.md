@@ -1,37 +1,48 @@
-# statuslin.es submission draft
+# Submissions — what to do, and when
 
-**Name:** Nocturne
-
-**Tags:** Git · Tokens · Cost · Usage · Multi-Line
-
-**Description (one paragraph, for the gallery card):**
-A two-line status line built on one rule: the bar recedes, the number speaks. Every meter splits into a muted bar and a bright percentage, so the shapes read as texture and the values carry the signal. Two badges — model and branch — are the only filled chips; each has its own icon compartment in a deeper tone, and the branch badge disappears entirely outside a git repo. Yellow is context, orange the session window, purple the week, and each meter's countdown inherits its own colour. No flex stretching, so it looks identical whether the pane is full-screen or split.
-
-**Author:** @hasuwini77
-
-**Repo:** https://github.com/hasuwini77/ccstatusline-nocturne
+Two channels. Neither can be done from a terminal: both require a signed-in human, deliberately.
 
 ---
 
-## Cross-posting checklist (in order)
+## 1. statuslin.es — ready now, blocked on one unknown
 
-1. **Push the repo**, topics: `claude-code`, `ccstatusline`, `statusline`, `terminal`, `dotfiles`, `nerd-fonts`.
-2. **Submit to statuslin.es** with the text above.
-3. **Link from `claude-pulse`'s README** — same audience, your own project, sends traffic both ways.
-4. **Feature both on the profile README** (`hasuwini77/hasuwini77`).
-5. **Submit to awesome-claude-code** — an accepted list entry is a durable discovery channel, unlike a post.
-6. **r/ClaudeAI or r/commandline** — screenshot first, link second. Image posts carry; link posts sink.
+Submitting requires **signing in with GitHub** at https://statuslin.es/submit — the form isn't visible until you do.
+
+One thing to check when you get there: the guide says the gallery *"runs the submitted script in a sandbox against the same JSON scenarios on this page"*, and the cards carry language tags like `Python`. That suggests entries are **standalone scripts**, not ccstatusline configs. If the form only accepts a script, tell me and I'll port the Noctu layout to a single self-contained file.
+
+Honest limit if we do port it: a sandboxed script only receives Claude Code's status JSON — model, cwd, transcript path, cost, duration. The **session and weekly usage meters can't come from that**; they need the usage endpoint that ccstatusline caches. A script version would carry context, git, cost and throughput, and drop the two usage bars.
+
+**Card text (one per theme, submit the default first):**
+
+> **Noctu** — A two-row status line built on one rule: the bar recedes, the number speaks. Every meter splits into a muted bar and a bright value, so the shapes read as texture and the numbers carry the signal. Model and context on one row, branch and the weekly limit on the other; only those two get filled badges, because only those two are identity. The columns stay aligned at any width and with any branch name, which a config alone cannot do — a small post-render pass measures each row and pads it. Seven palettes, two layouts.
 
 ---
 
-## Per-theme gallery entries
+## 2. awesome-claude-code — blocked until 2026-09-30
 
-Submit them as separate cards — each is its own discovery door back to the same repo.
+Their ground rules: a resource must be **at least 14 days old with continued commits**, or have **at least 100 stars**. This repo's first commit is 2026-09-16, so it becomes eligible on **2026-09-30** — keep committing between now and then, or cross 100 stars sooner.
 
-- **Nocturne** — tags: Git · Tokens · Cost · Usage · Multi-Line. (Use the description above.)
-- **Nocturne Flat** — "The same layout with no Nerd Font requirement: not one private-use glyph, so it renders correctly over SSH, in a bare terminal, or anywhere patched fonts aren't installed. Muted bars, bright values, plain dividers."
-- **Nocturne Powerline** — "The classic filled-block treatment of the same layout: every field a coloured segment with arrow separators, bars muted so the numbers still lead."
-- **Nocturne Light** — "Built for light terminals. The palette is re-derived rather than inverted — bars go pale, values go deep — so contrast holds on white."
+Submitting early gets the issue auto-closed by a bot, so don't.
 
-- **Nocturne Panel** — "Three rows, one grid: model, branch and the weekly limit each lead a row as a badge, with the meters aligned in a column behind them. Alignment is done by a small post-render script, because a status line config can't know how long your branch name is."
-- **Panel: Palenight / Dracula / Tokyo Night / Material Light** — same grid, four more palettes. Mention the light one separately; galleries are nearly all dark.
+Three more things from their CONTRIBUTING:
+
+- **The web issue form only.** `gh` CLI submissions are explicitly forbidden and risk a temporary interaction ban: https://github.com/hesreallyhim/awesome-claude-code/issues/new?template=recommend-resource.yml
+- **One resource at a time.** Submit the repo, not individual themes.
+- **Style:** a description, not a pitch. One line. No emojis. Don't address the reader.
+
+**Entry text, written to their style:**
+
+> Noctu — Status line themes for Claude Code built on ccstatusline, providing two layouts and seven palettes with column-aligned meters, git-aware collapsing, and a post-render alignment script.
+
+Their own README advertises "scintillating status lines", so the category fits.
+
+---
+
+## 3. What actually moves first
+
+The list maintainer says it plainly: build, **get users**, then submit — not the reverse. So the order is statuslin.es, then your profile, then the list on the 30th.
+
+- [ ] Sign in at statuslin.es and submit Noctu (report back what the form wants)
+- [ ] Pin the repo on your profile, hide the forks
+- [ ] Keep committing until 2026-09-30, then file the awesome-claude-code issue
+- [ ] After acceptance, add their badge to the README
