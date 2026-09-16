@@ -173,14 +173,13 @@ def main():
             else dim_meter('ctx ')]
     level = (data.get('effort') or {}).get('level')
     row1.append(fg(EFFORT) + level + RESET if level else fg(DIM) + '\u2014' + RESET)
-    spent = cost.get('total_cost_usd')
-    if spent is not None:
-        row1.append(fg(GREEN) + '$%.2f' % spent + RESET)
     took = duration(cost.get('total_duration_ms'))
-    if took:
-        row1.append(fg(BLUE) + took + RESET)
+    row1.append(fg(BLUE) + took + RESET if took else fg(DIM) + '\u2014' + RESET)
 
     row2 = list(limit_meter(data.get('rate_limits')))
+    spent = cost.get('total_cost_usd')
+    if spent is not None:
+        row2.append(fg(GREEN) + '$%.2f' % spent + RESET)
     added, removed = cost.get('total_lines_added'), cost.get('total_lines_removed')
     if added or removed:
         row2.append(fg(GREEN) + '+%d' % (added or 0) + RESET + fg(DIM) + '/' + RESET +
@@ -189,17 +188,17 @@ def main():
     if style and style != 'default':
         row2.append(fg(DIM) + style + RESET)
 
+    # every column lines up: pad each cell to the widest one above or below it
+    rows = [[left[0]] + row1, [right[0]] + row2]
+    widths = {}
+    for cells in rows:
+        for i, cell in enumerate(cells[:-1]):
+            widths[i] = max(widths.get(i, 0), visible_len(cell))
     sep = ' ' + fg(DIM) + DIVIDER + RESET + ' '
-    rows = [(left[0], row1), (right[0], row2)]
-    width = max(visible_len(head) for head, _ in rows)
-    out = []
-    for head, fields in rows:
-        if not head and not fields:
-            continue
-        pad = ' ' * (width - visible_len(head))
-        out.append(head + pad + sep + sep.join(fields) if fields else head + pad)
+    out = [sep.join(cell + ' ' * (widths.get(i, 0) - visible_len(cell)) if i < len(cells) - 1 else cell
+                    for i, cell in enumerate(cells))
+           for cells in rows]
     sys.stdout.buffer.write('\n'.join(out).encode('utf-8'))
-
 
 if __name__ == '__main__':
     main()
