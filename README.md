@@ -46,6 +46,30 @@ cp scripts/align-bars.py ~/.claude/scripts/align-bars.py
 
 Needs ~100 columns; the two-line themes go down to 56.
 
+### Panel palettes
+
+The same three-row grid in four more palettes. Each one keeps the rule — muted bar, bright value, one accent per meter — so they read identically; only the hues change. All four need `scripts/align-bars.py`, same as the panel above.
+
+**Palenight**
+
+![Palenight](themes/panel-palenight/preview.png)
+
+**Dracula**
+
+![Dracula](themes/panel-dracula/preview.png)
+
+**Tokyo Night**
+
+![Tokyo Night](themes/panel-tokyo-night/preview.png)
+
+**Material Light** — for light terminals. The bars are blended less toward the background than the dark themes use, or they wash out on white.
+
+![Material Light](themes/panel-material-light/preview.png)
+
+```bash
+cp themes/panel-dracula/settings.json ~/.config/ccstatusline/settings.json   # or any of the four
+```
+
 ### Nocturne Flat
 **No Nerd Font required** — not a single private-use glyph. Same colours and layout, plain `|` dividers, no badges. Use this over SSH, in a bare terminal, or anywhere the fancy glyphs come out as boxes.
 

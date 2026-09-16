@@ -32,3 +32,6 @@ Submit them as separate cards — each is its own discovery door back to the sam
 - **Nocturne Flat** — "The same layout with no Nerd Font requirement: not one private-use glyph, so it renders correctly over SSH, in a bare terminal, or anywhere patched fonts aren't installed. Muted bars, bright values, plain dividers."
 - **Nocturne Powerline** — "The classic filled-block treatment of the same layout: every field a coloured segment with arrow separators, bars muted so the numbers still lead."
 - **Nocturne Light** — "Built for light terminals. The palette is re-derived rather than inverted — bars go pale, values go deep — so contrast holds on white."
+
+- **Nocturne Panel** — "Three rows, one grid: model, branch and the weekly limit each lead a row as a badge, with the meters aligned in a column behind them. Alignment is done by a small post-render script, because a status line config can't know how long your branch name is."
+- **Panel: Palenight / Dracula / Tokyo Night / Material Light** — same grid, four more palettes. Mention the light one separately; galleries are nearly all dark.
