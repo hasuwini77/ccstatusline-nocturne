@@ -55,7 +55,7 @@ Swap any of them in `settings.json`. Colours use the `hex:RRGGBB` form — **no 
 
 The preview shows a sample session. Widths were checked at 230, 113 and 100 columns, inside a repo and outside one.
 
-Built with [ccstatusline](https://github.com/sirmalloc/ccstatusline) by sirmalloc.
+This is a **configuration, not a fork**. It contains no ccstatusline code — just a `settings.json` describing widgets, colours and layout. The program itself is [ccstatusline](https://github.com/sirmalloc/ccstatusline) by sirmalloc (MIT); install it from npm and point it at this file.
 
 ## License
 
