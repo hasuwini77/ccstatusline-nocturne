@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Noctu — a two-row status line for Claude Code, no dependencies, no network.
+"""Noctu - a two-row status line for Claude Code, no dependencies, no network.
 
-Reads Claude Code's session JSON on stdin, prints two rows:
+Reads Claude Code's session JSON on stdin and prints two rows: a model chip
+with the context meter, effort and session time, then a branch chip with the
+weekly limit, its reset, cost and lines changed.
 
-    ◆ Opus 5  ▏ ctx  ▓▓▓▓░░░░░░ 38% ▏ $0.42 ▏ 14m
-     master   ▏ diff +128/-34   ▏ 2.1k lines
+The source is ASCII-only on purpose: every glyph is a unicode escape, so the file
+survives any copy-paste, and output is written as UTF-8 bytes whatever the
+console's encoding.
 
 The design rule: the bar recedes, the number speaks. Meters are a muted bar
 plus a bright value, and only the model and the branch get filled badges,
@@ -23,7 +26,7 @@ TEAL, TEAL_DK = '2E9E7A', '1E6B52'
 SLATE, SLATE_DK, SLATE_INK, SLATE_GLYPH = '3C414B', '262A32', '979CA8', '727681'
 YELLOW, YELLOW_BAR = 'F0C755', '6B5A28'
 GREEN, BLUE, DIM, INK, WHITE = '7CE38B', '5B9BE8', '79808E', '0B0E14', 'FFFFFF'
-BAR_FULL, BAR_EMPTY, ARROW, DIVIDER, BRANCH_ICON, DIAMOND = '▓', '░', '', '▏', '', '◆'
+BAR_FULL, BAR_EMPTY, ARROW, DIVIDER, BRANCH_ICON, DIAMOND = '\u2593', '\u2591', '\ue0b0', '\u258f', '\uf418', '\u25c6'
 BAR_WIDTH = 10
 
 
@@ -39,7 +42,7 @@ RESET = '\x1b[0m'
 
 
 def chip(icon, label, body, icon_bg, ink=INK, glyph=WHITE, bold=True):
-    """icon compartment + label + arrow cap — the badge that anchors each row"""
+    """icon compartment + label + arrow cap - the badge that anchors each row"""
     return (bg(icon_bg) + fg(glyph) + ' ' + icon + ' ' + RESET +
             bg(body) + fg(ink) + ('\x1b[1m ' if bold else ' ') + label + ' ' + RESET +
             fg(body) + ARROW + RESET)
@@ -127,7 +130,7 @@ def main():
              chip(BRANCH_ICON, 'no git', SLATE, SLATE_DK, SLATE_INK, SLATE_GLYPH, bold=False)]
 
     row1 = [meter(pct, YELLOW_BAR, YELLOW, 'ctx ') if pct is not None
-            else fg(DIM) + 'ctx  —' + RESET]
+            else fg(DIM) + 'ctx  \u2014' + RESET]
     spent = cost.get('total_cost_usd')
     if spent is not None:
         row1.append(fg(GREEN) + '$%.2f' % spent + RESET)
@@ -153,7 +156,7 @@ def main():
             continue
         pad = ' ' * (width - visible_len(head))
         out.append(head + pad + sep + sep.join(fields) if fields else head + pad)
-    sys.stdout.write('\n'.join(out))
+    sys.stdout.buffer.write('\n'.join(out).encode('utf-8'))
 
 
 if __name__ == '__main__':
