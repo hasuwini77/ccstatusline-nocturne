@@ -18,6 +18,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 
 # palette (hex -> truecolor SGR)
 VIOLET, VIOLET_DK = '7C5CFF', '5B3FD1'
@@ -25,6 +26,8 @@ TEAL, TEAL_DK = '2E9E7A', '1E6B52'
 # outside a repository: the divider grey, sunk toward the background
 SLATE, SLATE_DK, SLATE_INK, SLATE_GLYPH = '3C414B', '262A32', '979CA8', '727681'
 YELLOW, YELLOW_BAR = 'F0C755', '6B5A28'
+PURPLE, PURPLE_BAR, PURPLE_DIM = 'B69CFF', '463A6B', '8B79C9'
+ORANGE, ORANGE_BAR, ORANGE_DIM = 'E8903C', '7A4A1E', 'C97B3C'
 GREEN, BLUE, DIM, INK, WHITE = '7CE38B', '5B9BE8', '79808E', '0B0E14', 'FFFFFF'
 BAR_FULL, BAR_EMPTY, ARROW, DIVIDER, BRANCH_ICON, DIAMOND = '\u2593', '\u2591', '\ue0b0', '\u258f', '\uf418', '\u25c6'
 BAR_WIDTH = 10
@@ -53,6 +56,36 @@ def meter(pct, bar_colour, value_colour, label):
     bar = fg(bar_colour) + BAR_FULL * filled + BAR_EMPTY * (BAR_WIDTH - filled) + RESET
     return (fg(value_colour) + label + RESET + ' ' + bar + ' ' +
             fg(value_colour) + '%d%%' % round(pct) + RESET)
+
+
+def dim_meter(label):
+    return fg(DIM) + label + ' \u2014' + RESET
+
+
+def until(epoch):
+    """Compact countdown to a unix time: 2d1h, 3h07m, 18m."""
+    try:
+        left = max(0, int(float(epoch) - time.time()))
+    except (TypeError, ValueError):
+        return None
+    days, rem = divmod(left, 86400)
+    hours, mins = rem // 3600, rem % 3600 // 60
+    if days:
+        return '%dd%dh' % (days, hours)
+    return '%dh%02dm' % (hours, mins) if hours else '%dm' % mins
+
+
+def limit_meter(limits):
+    """The weekly window, or the five-hour one when that's all that has reported."""
+    limits = limits if isinstance(limits, dict) else {}
+    for key, label, bar, value, timer in (('seven_day', 'week', PURPLE_BAR, PURPLE, PURPLE_DIM),
+                                          ('five_hour', '5h  ', ORANGE_BAR, ORANGE, ORANGE_DIM)):
+        window = limits.get(key)
+        if isinstance(window, dict) and window.get('used_percentage') is not None:
+            left = until(window.get('resets_at'))
+            return (meter(window['used_percentage'], bar, value, label),
+                    fg(timer) + left + RESET if left else fg(DIM) + '\u2014' + RESET)
+    return dim_meter('week'), fg(DIM) + '\u2014' + RESET
 
 
 def context_percent(transcript, window):
@@ -136,7 +169,7 @@ def main():
              chip(BRANCH_ICON, 'no git', SLATE, SLATE_DK, SLATE_INK, SLATE_GLYPH, bold=False)]
 
     row1 = [meter(pct, YELLOW_BAR, YELLOW, 'ctx ') if pct is not None
-            else fg(DIM) + 'ctx  \u2014' + RESET]
+            else dim_meter('ctx ')]
     spent = cost.get('total_cost_usd')
     if spent is not None:
         row1.append(fg(GREEN) + '$%.2f' % spent + RESET)
@@ -144,7 +177,7 @@ def main():
     if took:
         row1.append(fg(BLUE) + took + RESET)
 
-    row2 = []
+    row2 = list(limit_meter(data.get('rate_limits')))
     added, removed = cost.get('total_lines_added'), cost.get('total_lines_removed')
     if added or removed:
         row2.append(fg(GREEN) + '+%d' % (added or 0) + RESET + fg(DIM) + '/' + RESET +
